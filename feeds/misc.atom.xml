@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>myblog</title><link href="http//localhost/" rel="alternate"></link><link href="http//localhost/feeds/misc.atom.xml" rel="self"></link><id>http//localhost/</id><updated>2014-01-13T00:00:00+01:00</updated><entry><title>VIM</title><link href="http//localhost/vim.html" rel="alternate"></link><updated>2014-01-13T00:00:00+01:00</updated><author><name>lotaku</name></author><id>tag:http//localhost,2014-01-13:vim.html</id><summary type="html">&lt;h1&gt;vim&lt;/h1&gt;
+&lt;p&gt;个人VIM&lt;/p&gt;</summary></entry></feed>
