@@ -59,6 +59,29 @@
     <div class="row">
         <div class="col-lg-9">
             <article>
+                <h2><a href="/djangoxue-xi-ji-lu.html">Django学习记录</a></h2>
+                <div class="summary"><h3>验证模型的有效性</h3>
+<p><code>python manage.py validate</code></p>
+<h3>模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句</h3>
+<p><code>python manage.py sqlall books</code></p>
+<p>sqlall 命令并没有在数据库中真正创建数据表，只是把SQL语句段打印出来，这样你可以看到Django究竟会做些什么。</p>
+<h3>提交SQL语句至数据库的方法</h3>
+<p><code>python manage.py syncdb</code></p>
+<h3>使用Django modle API创建对象时Django并未将对象保存至数据库内，除非你调用<code>save()</code> 方法</h3>
+<div class="highlight"><pre><span class="n">p1</span> <span class="o">=</span> <span class="n">Publisher</span><span class="p">(...)</span>
+<span class="cp"># At this point, p1 is not saved to the database yet!</span>
+<span class="n">p1</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
+<span class="cp"># Now it is.</span>
+</pre></div>
+
+
+<h3>添加模块的字符串表现</h3>
+<p>当我们打印整个publisher列表时 ...</p>
+                    <a class="btn btn-default btn-xs" href="/djangoxue-xi-ji-lu.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="/ce-shi-wen-zhang-ti-mu.html">测试文章题目</a></h2>
                 <div class="summary"><h1>vim</h1>
 <h6>个人VIM</h6>
@@ -201,13 +224,18 @@
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/ce-shi.html">
-                                测试
+                            <a href="/tag/xi-tong.html">
+                                系统
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/xi-tong.html">
-                                系统
+                            <a href="/tag/django.html">
+                                django
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/ce-shi.html">
+                                测试
                             </a>
                         </li>
         </ul>
