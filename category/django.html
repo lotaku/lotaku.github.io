@@ -47,7 +47,13 @@
                             <a href="/category/django.html">Django</a>
                         </li>
                         <li >
+                            <a href="/category/linux.html">Linux</a>
+                        </li>
+                        <li >
                             <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/mysql.html">Mysql</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -62,7 +68,124 @@
     <div class="row">
         <div class="col-lg-9">
             <article>
-                <h2><a href="/djangoxue-xi-ji-lu.html">Django学习记录</a></h2>
+                <h2><a href="/django-biao-dan.html">Django-表单</a></h2>
+                <div class="summary"><h3>简单示例</h3>
+<p>创建一个forms.py文件，放在app的目录下，与views.py在同个目录下。当然,这个不是硬性要求。</p>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">django</span> <span class="n">import</span> <span class="n">forms</span>
+
+<span class="n">class</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="p">.</span><span class="n">Form</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">subject</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">()</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="n">False</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">()</span>
+</pre></div>
+
+
+<p>创建一个新的对Form象，并且传入一个与定义匹配的字典类型数据：6</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">({</span><span class="err">&#39;</span><span class="n">subject</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Hello</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">email</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">adrian</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">message</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Nice</span> <span class="n">site</span><span class="o">!</span><span class="err">&#39;</span><span class="p">})</span>
+</pre></div>
+
+
+<p>一旦你对一个Form实体赋值，你就得到了一个绑定form：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">is_bound</span>
+<span class="n">True</span>
+</pre></div>
+
+
+<p>调用任何绑定form的is_valid()方法，就可以知道它的数据是否合法。 我们已经为每个字段传入了值 ...</p>
+                    <a class="btn btn-default btn-xs" href="/django-biao-dan.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/djangochang-yong-ming-ling.html">Django常用命令</a></h2>
+                <div class="summary"><h3>开启服务器</h3>
+<div class="highlight"><pre><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">runserver</span>
+
+<span class="n">or</span>
+
+<span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">runserver</span> <span class="mi">8000</span>
+
+<span class="n">or</span>
+
+<span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">runserver</span> <span class="mf">0.0.0.0</span><span class="o">:</span><span class="mi">8000</span>
+</pre></div>
+                    <a class="btn btn-default btn-xs" href="/djangochang-yong-ming-ling.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/djangogao-ji-shi-tu-he-urlpei-zhi.html">Django高级视图和URL配置</a></h2>
+                <div class="summary"><h3>URLconf 技巧:减少重复输入</h3>
+<p>1.我们可以把公共的前缀提取出来，作为第一个参数传给urlpatterns函</p>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">urls</span><span class="p">.</span><span class="n">defaults</span> <span class="n">import</span> <span class="o">*</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="o">**</span><span class="err">&#39;</span><span class="n">mysite</span><span class="p">.</span><span class="n">views</span><span class="err">&#39;</span><span class="o">**</span> <span class="p">,</span>
+    <span class="p">(</span><span class="n">r</span><span class="err">&#39;</span><span class="o">^</span><span class="n">hello</span><span class="o">/</span><span class="err">$&#39;</span><span class="p">,</span> <span class="o">**</span><span class="err">&#39;</span><span class="n">hello</span><span class="err">&#39;</span><span class="o">**</span> <span class="p">),</span>
+    <span class="p">(</span><span class="n">r</span><span class="err">&#39;</span><span class="o">^</span><span class="n">time</span><span class="o">/</span><span class="err">$&#39;</span><span class="p">,</span> <span class="o">**</span><span class="err">&#39;</span><span class="n">current_datetime</span><span class="err">&#39;</span><span class="o">**</span> <span class="p">),</span>
+    <span class="p">(</span><span class="n">r</span><span class="err">&#39;</span><span class="o">^</span><span class="n">time</span><span class="o">/</span><span class="n">plus</span><span class="o">/</span><span class="p">(</span><span class="n">d</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">})</span><span class="o">/</span><span class="err">$&#39;</span><span class="p">,</span> <span class="o">**</span><span class="err">&#39;</span><span class="n">hours_ahead</span><span class="err">&#39;</span><span class="o">**</span> <span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>2.可以传入一个包含模块名和函数名的字符串，而不是函数对象本身</p>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">urls</span><span class="p">.</span><span class="n">defaults</span> <span class="n">import</span> <span class="o">*</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="err">&#39;&#39;</span><span class="p">,</span>
+    <span class="p">(</span><span class="n">r</span><span class="err">&#39;</span><span class="o">^</span><span class="n">hello</span><span class="o">/</span><span class="err">$&#39;</span><span class="p">,</span> <span class="o">**</span><span class="err">&#39;</span><span class="n">mysite</span><span class="p">.</span><span class="n">views</span><span class="p">.</span><span class="n">hello</span><span class="err">&#39;</span><span class="o">**</span> <span class="p">),</span>
+    <span class="p">(</span><span class="n">r</span><span class="err">&#39;</span><span class="o">^</span><span class="n">time</span><span class="o">/</span><span class="err">$&#39;</span><span class="p">,</span> <span class="o">**</span><span class="err">&#39;</span><span class="n">mysite</span><span class="p">.</span><span class="n">views</span><span class="p">.</span><span class="n">current_datetime ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/djangogao-ji-shi-tu-he-urlpei-zhi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/djangomo-ban-gao-ji-jin-jie.html">Django模板高级进阶</a></h2>
+                <div class="summary"><h3>关闭html自动转意</h3>
+<p>1.对于单独的变量
+用safe过滤器为单独的变量关闭自动转意：</p>
+<div class="highlight"><pre><span class="n">This</span> <span class="n">will</span> <span class="n">be</span> <span class="n">escaped</span><span class="o">:</span> <span class="p">{{</span> <span class="n">data</span> <span class="p">}}</span>
+<span class="n">This</span> <span class="n">will</span> <span class="n">not</span> <span class="n">be</span> <span class="n">escaped</span><span class="o">:</span> <span class="p">{{</span> <span class="n">data</span><span class="o">|</span><span class="n">safe</span> <span class="p">}}</span>
+</pre></div>
+
+
+<h3>对于模板块</h3>
+<p>为了控制模板的自动转意,用标签autoescape来包装整个模板(或者模板中常用的部分),就像这样：</p>
+<div class="highlight"><pre><span class="p">{</span><span class="o">%</span> <span class="n">autoescape</span> <span class="n">off</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">Hello</span> <span class="p">{{</span> <span class="n">name</span> <span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endautoescape</span> <span class="o">%</span><span class="p">}</span>
+</pre></div>
+
+
+<p>autoescape 标签有两个参数on和off 有时,你可能想阻止一部分自动转意,对另一部分自动转意。 这是一个模板的例子：1</p>
+<div class="highlight"><pre><span class="n">Auto</span><span class="o">-</span><span class="n">escaping</span> <span class="n">is</span> <span class="n">on</span> <span class="n">by</span> <span class="k">default</span><span class="p">.</span> <span class="n">Hello</span> <span class="p">{{</span> <span class="n">name</span> <span class="p">}}</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="n">autoescape</span> <span class="n">off</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">This</span> <span class="n">will</span> <span class="n">not</span> <span class="n">be</span> <span class="k">auto</span><span class="o">-</span><span class="n">escaped</span><span class="o">:</span> <span class="p">{{</span> <span class="n">data ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/djangomo-ban-gao-ji-jin-jie.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/django-admin.html">Django-Admin</a></h2>
+                <div class="summary"><h3>其他语言</h3>
+<p>仅需添加<code>django.middleware.locale.LocaleMiddleware</code> 到<code>MIDDLEWARE_CLASSES</code> 设置中，并确保它在<code>django.contrib.sessions.middleware.SessionMiddleware</code> 之后</p>
+<h3>自定义字段标签</h3>
+<p>将Author.email的标签改为e-mail，中间有个横线。</p>
+<div class="highlight"><pre><span class="n">class</span> <span class="n">Author</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="n">True</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">e</span><span class="o">-</span><span class="n">mail</span><span class="err">&#39;</span> <span class="p">)</span>
+</pre></div>
+
+
+<p>简洁语法,你可以把它当作固定位置的参数传递。 这个例子与上面那个的效果相同。</p>
+<p>class Author(models.Model):
+    first_name ...</p>
+                    <a class="btn btn-default btn-xs" href="/django-admin.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/django-mo-xing.html">Django-模型</a></h2>
                 <div class="summary"><h3>验证模型的有效性</h3>
 <p><code>python manage.py validate</code></p>
 <h3>模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句</h3>
@@ -80,7 +203,7 @@
 
 <h3>添加模块的字符串表现</h3>
 <p>当我们打印整个publisher列表时 ...</p>
-                    <a class="btn btn-default btn-xs" href="/djangoxue-xi-ji-lu.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="/django-mo-xing.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -102,7 +225,12 @@
 
 
                 <li class="list-group-item"><a href="/tags.html"><h4><i class="icon-tags icon-large"></i>Tags</h4></a></li>
-                        <li class="list-group-item tag-1">
+                        <li class="list-group-item tag-0">
+                            <a href="/tag/django.html">
+                                django
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
                             <a href="/tag/xue-xi.html">
                                 学习
                             </a>
@@ -113,13 +241,33 @@
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/ce-shi.html">
-                                测试
+                            <a href="/tag/markdown.html">
+                                markdown
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/django.html">
-                                django
+                            <a href="/tag/pythonda-bao.html">
+                                python打包
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/mysql.html">
+                                mysql
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/linux.html">
+                                linux
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/pelican.html">
+                                pelican
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/python.html">
+                                python
                             </a>
                         </li>
         </ul>

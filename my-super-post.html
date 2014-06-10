@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Pelican 学习</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph tags -->
+
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Pelican 学习"/>
+            <meta property="og:url" content="/my-super-post.html"/>
+            <meta property="og:description" content="Short version for index and feeds"/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/theme/css/pygments.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="" class="navbar-brand">myblog</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/pages/guan-yu-wo.html">
+                             关于我
+                          </a></li>
+                        <li >
+                            <a href="/category/django.html">Django</a>
+                        </li>
+                        <li >
+                            <a href="/category/linux.html">Linux</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/mysql.html">Mysql</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
+<!-- /.navbar -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/my-super-post.html"
+                       rel="bookmark"
+                       title="Permalink to Pelican 学习">
+                        Pelican 学习
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="icon-calendar"></i>二 10 六月 2014
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/pelican.html">pelican</a>
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h3>学习材料</h3>
+<ul>
+<li>官方文档：<a href="http://docs.getpelican.com/en/3.3.0/">http://docs.getpelican.com/en/3.3.0/</a></li>
+</ul>
+<h3>介绍</h3>
+<p>可以在github上搭建一个全静态化的博客网站</p>
+<h3>安装等准备工作</h3>
+<p>http://docs.getpelican.com/en/3.3.0/getting_started.html</p>
+<h3>pelican theme tool</h3>
+<p>http://docs.getpelican.com/en/3.3.0/pelican-themes.html</p>
+<h3>常用命令</h3>
+<p>查看帮助：<code>$ pelican --help</code> <br />
+开启/停止本地web服务器：</p>
+<div class="highlight"><pre><span class="n">alias</span> <span class="n">myblogst</span><span class="o">=</span><span class="err">&#39;</span><span class="n">cd</span> <span class="o">~/</span><span class="n">app</span><span class="o">/</span><span class="n">myblog</span><span class="o">/</span> <span class="o">&amp;&amp;</span><span class="p">.</span><span class="o">/</span><span class="n">develop_server</span><span class="p">.</span><span class="n">sh</span> <span class="n">start</span><span class="err">&#39;</span>
+<span class="n">alias</span> <span class="n">myblogsp</span><span class="o">=</span><span class="err">&#39;</span><span class="n">cd</span> <span class="o">~/</span><span class="n">app</span><span class="o">/</span><span class="n">myblog</span><span class="o">/</span> <span class="o">&amp;&amp;</span><span class="p">.</span><span class="o">/</span><span class="n">develop_server</span><span class="p">.</span><span class="n">sh</span> <span class="n">stop</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<p>创建一个新的博客项目：</p>
+<div class="highlight"><pre><span class="cp">#进入新建的目录，比如myblog目录</span>
+<span class="err">$</span><span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+
+
+<p>同步网站：(同步方法在执行pelican命令时可选)</p>
+<div class="highlight"><pre><span class="n">make</span> <span class="n">rsync_upload</span>
+</pre></div>
+
+
+<p>其他命令： <br />
+升级pelican：<code>$ pip install --upgrade pelican</code></p>
+<h3>工具</h3>
+<ul>
+<li>
+<p>Fabric :对一些pelican命令的封装 方便使用（我再也不用使用./bashrc的别名来执行pelican的命令，虽然还是很好用的）
+fab安装：<code>pip install Fabric</code> <br />
+fab常用命令： <br />
+生成网站：<code>fab build</code> <br />
+重新生成网站：<code>fab regenerate</code> <br />
+启动web服务器：<code>fab serve</code> <br />
+开启ssh:<code>fab publish</code>   </p>
+</li>
+<li>
+<p>Make:也是一些pelican命令的封装 <br />
+生成网站：<code>make html</code> <br />
+重新生成网站：<code>make regenerate</code> <br />
+启动web服务器：<code>make serve</code> <br />
+重新生成网站并且再次启动web服务器：<code>make devserver</code>   </p>
+</li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-lg-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="icon-home icon-large"></i>Social</h4></li>
+                    <li class="list-group-item"><a href="#"><i
+                            class="icon-You can add links in your config file-sign icon-large"></i>You can add links in your config file
+                    </a></li>
+                    <li class="list-group-item"><a href="#"><i
+                            class="icon-Another social link-sign icon-large"></i>Another social link
+                    </a></li>
+
+
+
+                <li class="list-group-item"><a href="/tags.html"><h4><i class="icon-tags icon-large"></i>Tags</h4></a></li>
+                        <li class="list-group-item tag-0">
+                            <a href="/tag/django.html">
+                                django
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-2">
+                            <a href="/tag/xue-xi.html">
+                                学习
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/xi-tong.html">
+                                系统
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/pelican.html">
+                                pelican
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/pythonda-bao.html">
+                                python打包
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/python.html">
+                                python
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/mysql.html">
+                                mysql
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/linux.html">
+                                linux
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/markdown.html">
+                                markdown
+                            </a>
+                        </li>
+        </ul>
+    </section>
+</aside>        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <hr>
+        <p class="pull-right"><i class="icon-arrow-up"></i> <a href="#">Back to top</a></p>
+
+
+        <p>&copy; 2014 lotaku &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a></p>
+    </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

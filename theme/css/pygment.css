@@ -1,13 +1,13 @@
 .hll {
-background-color:#eee;
+background-color:#FFFFCC;
 }
 .c {
 color:#408090;
 font-style:italic;
 }
-/*.err {*/
-/*border:1px solid #FF0000;*/
-/*}*/
+.err {
+border:1px solid #FF0000;
+}
 .k {
 color:#007020;
 font-weight:bold;
