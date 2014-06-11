@@ -1,268 +1,175 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
-<head>
-    <title>博文书写语言-Markdown - myblog</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lotaku" />
+        <meta name="copyright" content="Lotaku" />
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="myblog" />
-            <meta property="og:type" content="article"/>
-            <meta property="og:title" content="博文书写语言-Markdown"/>
-            <meta property="og:url" content="/bo-wen-shu-xie-yu-yan-markdown.html"/>
-            <meta property="og:description" content="安装 $pip install Markdown 学习 某网址。。。"/>
-            <meta property="article:published_time" content="2014-06-10" />
-                <meta property="article:section" content="misc" />
-                <meta property="article:tag" content="markdown" />
-                <meta property="article:author" content="lotaku" />
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
-
-
-</head>
-<body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">
-myblog            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                         <li><a href="/pages/guan-yu-wo.html">
-                             关于我
-                          </a></li>
-                        <li class="active">
-                            <a href="/category/misc.html">Misc</a>
-                        </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="/bo-wen-shu-xie-yu-yan-markdown.html"
-                       rel="bookmark"
-                       title="Permalink to 博文书写语言-Markdown">
-                        博文书写语言-Markdown
+<meta name="keywords" content="markdown, misc, " />
+        <title>博文书写语言-Markdown  · Lotaku
+</title>
+        <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="lotaku.github.io/theme/css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="lotaku.github.io/theme/css/solarizedlight.css" media="screen">
+        <link rel="shortcut icon" href="lotaku.github.io/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="lotaku.github.io/theme/images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="lotaku.github.io/theme/images/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="lotaku.github.io/theme/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="lotaku.github.io/theme/images/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="lotaku.github.io/theme/images/apple-touch-icon-144x144.png" />
+        <link rel="icon" href="lotaku.github.io/theme/images/apple-touch-icon-144x144.png" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-06-10T00:00:00"> 二 10 六月 2014</time>
-    </span>
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="/tag/markdown.html">markdown</a>
-    
-</footer><!-- /.post-info -->                    </div>
+                    <a class="brand" href="lotaku.github.io/"><span class=site-name>Lotaku</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="lotaku.github.io">Home</a></li>
+                            <li ><a href="lotaku.github.io/pages/guan-yu-wo.html">关于我</a></li>
+                            <li ><a href="lotaku.github.io/categories.html">Categories</a></li>
+                            <li ><a href="lotaku.github.io/tags.html">Tags</a></li>
+                            <li ><a href="lotaku.github.io/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="lotaku.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
                 </div>
-                <h3>安装</h3>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page_header span10 offset2">
+    <h1><a href="lotaku.github.io/bo-wen-shu-xie-yu-yan-markdown.html"> 博文书写语言-Markdown  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <h3>安装</h3>
 <div class="highlight"><pre><span class="err">$</span><span class="n">pip</span> <span class="n">install</span> <span class="n">Markdown</span>
 </pre></div>
 
 
 <h3>学习</h3>
 <p>某网址。。。</p>
-            </div>
-            <!-- /.entry-content -->
-    <hr/>
-    <section class="comments" id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = '{lotaku}'; // required: replace example with your forum shortname
-
-                    var disqus_identifier = 'bo-wen-shu-xie-yu-yan-markdown';
-                var disqus_url = '/bo-wen-shu-xie-yu-yan-markdown.html';
-
-            var disqus_config = function () {
-                this.language = "en";
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-    </section>
-        </article>
-    </section>
-
+<section>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="lotaku.github.io/bo-wen-shu-xie-yu-yan-markdown.html#disqus_thread">
+                Comments
+            </a>
         </div>
-        <div class="col-sm-3 well well-sm" id="sidebar">
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lotaku';
+        var disqus_identifier = 'lotaku.github.io/bo-wen-shu-xie-yu-yan-markdown.html';
+    var disqus_url = 'lotaku.github.io/bo-wen-shu-xie-yu-yan-markdown.html';
 
-<aside>
-    <section>
-        <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-                  <ul class="list-group" id="social">
-                    <li class="list-group-item"><a href="#"><i class="fa fa-you can add links in your config file-square fa-lg"></i> You can add links in your config file</a></li>
-                    <li class="list-group-item"><a href="#"><i class="fa fa-another social link-square fa-lg"></i> Another social link</a></li>
-                  </ul>
-                </li>
-
-
-
-                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                    <ul class="list-group " id="tags">
-                        <li class="list-group-item tag-0">
-                            <a href="/tag/django.html">
-                                django
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-2">
-                            <a href="/tag/xue-xi.html">
-                                学习
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/linux.html">
-                                linux
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/markdown.html">
-                                markdown
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/pythonda-bao.html">
-                                python打包
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/python.html">
-                                python
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/xi-tong.html">
-                                系统
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/mysql.html">
-                                mysql
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/pelican.html">
-                                pelican
-                            </a>
-                        </li>
-                    </ul>
-                </li>    
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your config file
-            </a>
-        </li>
-      </ul>
-    </li>
-
-        </ul>
-    </section>
-
-</aside>        </div>
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>                </div>
+            </div>
+        </div>
     </div>
 </div>
+</section>
+            <aside>
+            <hr/>
+            <nav>
+            <ul class="articles_timeline">
+ 
+                <li class="previous_article">« <a href="lotaku.github.io/pelican learn.html" title="Previous: Pelican 学习">Pelican 学习</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2014-06-10T00:00:00">Jun 10, 2014</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#misc-ref">misc</a> 
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article"> 
+                <li><a href="/tags.html#markdown-ref">markdown
+                    <span>1</span>
+</a></li>
+            </ul>
+
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
 <footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-         <div class="col-xs-10">&copy; 2014 lotaku
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="/theme/js/jquery.min.js"></script>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var disqus_shortname = 'lotaku';
 
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
-
-    <!-- Disqus -->
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = '{lotaku}'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function () {
-            var s = document.createElement('script');
-            s.async = true;
-            s.type = 'text/javascript';
-            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-        }());
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
     </script>
-    <!-- End Disqus Code -->
-</body>
+        <script  language="javascript" type="text/javascript">
+            function uncollapse() {
+                var hash_str = window.location.hash;
+                if (window.location.hash.match(/^#comment-\d+$/))
+                {
+                    var hash_str = '#disqus_thread';
+                }
+                $(hash_str).collapse({
+                    toggle: true
+                    })
+            }
+        </script>
+
+        <script type="text/javascript" language="JavaScript">
+            uncollapse(); 
+        </script>
+    </body>
 </html>
