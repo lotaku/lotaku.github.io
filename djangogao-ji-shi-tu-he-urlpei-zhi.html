@@ -6,6 +6,8 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
+        <meta name="description" content="URLconf 技巧:减少重复输入 1.我们可以把公共的前缀提取出来，作为第一个参数传给urlpatterns函 from django.conf.urls.defaults import * urlpatterns = patterns(**'mysite.views'** , (r'^hello/$', **'hello'** ), (r'^time/$', **'current_datetime'** ), (r'^time/plus/(d{1,2})/$', **'hours_ahead'** ), ) 2.可以传入一个包含模块名和函数名的字符串，而不是函数对象本身 from django.conf.urls.defaults import * urlpatterns = patterns('', (r'^hello/$', **'mysite.views.hello'** ), (r'^time/$', **'mysite.views.current_datetime ...
+" />
 <meta name="keywords" content="django, django, " />
         <title>Django高级视图和URL配置  · Lotaku
 </title>
@@ -195,6 +197,7 @@
 <h3 id="urlconf_3">包含其他URLconf</h3>
 <p>参考：<a href="http://djangobook.py3k.cn/2.0/chapter08/">http://djangobook.py3k.cn/2.0/chapter08/</a></p>
 <section>
+<p id="comment-message">string </p>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
@@ -251,6 +254,16 @@
 </a></li>
             </ul>
 
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+                <form action="string" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <h4>string</h4>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="string" required>
+                    <div class="clear"><input type="submit" value="string" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </form>
+            </div>
+
+            <!--End mc_embed_signup-->
         </div>
         </section>
 </div>
@@ -263,6 +276,8 @@
 <footer>
 <div id="footer">
     <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Lotaku</span> - string</li>
+        <li class="elegant-license">SITE_LICENSE</li>
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>

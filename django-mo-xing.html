@@ -6,6 +6,8 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
+        <meta name="description" content="验证模型的有效性 python manage.py validate 模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句 python manage.py sqlall books sqlall 命令并没有在数据库中真正创建数据表，只是把SQL语句段打印出来，这样你可以看到Django究竟会做些什么。 提交SQL语句至数据库的方法 python manage.py syncdb 使用Django modle API创建对象时Django并未将对象保存至数据库内，除非你调用save() 方法 p1 = Publisher(...) # At this point, p1 is not saved to the database yet! p1.save() # Now it is. 添加模块的字符串表现 当我们打印整个publisher列表时 ...
+" />
 <meta name="keywords" content="django, django, " />
         <title>Django-模型  · Lotaku
 </title>
@@ -277,6 +279,7 @@
 <span class="nx">AttributeError</span><span class="p">:</span> <span class="s1">&#39;Manager&#39;</span> <span class="nb">object</span> <span class="nx">has</span> <span class="nx">no</span> <span class="nx">attribute</span> <span class="s1">&#39;delete&#39;</span>
 </pre></div>
 <section>
+<p id="comment-message">string </p>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
@@ -333,6 +336,16 @@
 </a></li>
             </ul>
 
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+                <form action="string" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <h4>string</h4>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="string" required>
+                    <div class="clear"><input type="submit" value="string" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </form>
+            </div>
+
+            <!--End mc_embed_signup-->
         </div>
         </section>
 </div>
@@ -345,6 +358,8 @@
 <footer>
 <div id="footer">
     <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Lotaku</span> - string</li>
+        <li class="elegant-license">SITE_LICENSE</li>
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>

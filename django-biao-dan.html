@@ -6,6 +6,8 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
+        <meta name="description" content="简单示例 创建一个forms.py文件，放在app的目录下，与views.py在同个目录下。当然,这个不是硬性要求。 from django import forms class ContactForm(forms.Form): subject = forms.CharField() email = forms.EmailField(required=False) message = forms.CharField() 创建一个新的对Form象，并且传入一个与定义匹配的字典类型数据：6 >>> f = ContactForm({'subject': 'Hello', 'email': 'adrian@example.com', 'message': 'Nice site!'}) 一旦你对一个Form实体赋值，你就得到了一个绑定form： >>> f.is_bound True 调用任何绑定form的is_valid()方法，就可以知道它的数据是否合法。 我们已经为每个字段传入了值 ...
+" />
 <meta name="keywords" content="django, django, " />
         <title>Django-表单  · Lotaku
 </title>
@@ -136,6 +138,7 @@
     <span class="n">message</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="p">.</span><span class="n">Textarea</span><span class="p">)</span>
 </pre></div>
 <section>
+<p id="comment-message">string </p>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
@@ -192,6 +195,16 @@
 </a></li>
             </ul>
 
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+                <form action="string" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <h4>string</h4>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="string" required>
+                    <div class="clear"><input type="submit" value="string" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </form>
+            </div>
+
+            <!--End mc_embed_signup-->
         </div>
         </section>
 </div>
@@ -204,6 +217,8 @@
 <footer>
 <div id="footer">
     <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Lotaku</span> - string</li>
+        <li class="elegant-license">SITE_LICENSE</li>
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>

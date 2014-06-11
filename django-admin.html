@@ -6,6 +6,8 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
+        <meta name="description" content="其他语言 仅需添加django.middleware.locale.LocaleMiddleware 到MIDDLEWARE_CLASSES 设置中，并确保它在django.contrib.sessions.middleware.SessionMiddleware 之后 自定义字段标签 将Author.email的标签改为e-mail，中间有个横线。 class Author(models.Model): first_name = models.CharField(max_length=30) last_name = models.CharField(max_length=40) email = models.EmailField(blank=True, verbose_name='e-mail' ) 简洁语法,你可以把它当作固定位置的参数传递。 这个例子与上面那个的效果相同。 class Author(models.Model): first_name ...
+" />
 <meta name="keywords" content="django, django, " />
         <title>Django-Admin  · Lotaku
 </title>
@@ -152,6 +154,7 @@
     <span class="o">**</span><span class="n">raw_id_fields</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">publisher</span><span class="err">&#39;</span><span class="p">,)</span><span class="o">**</span>
 </pre></div>
 <section>
+<p id="comment-message">string </p>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
@@ -208,6 +211,16 @@
 </a></li>
             </ul>
 
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+                <form action="string" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <h4>string</h4>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="string" required>
+                    <div class="clear"><input type="submit" value="string" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </form>
+            </div>
+
+            <!--End mc_embed_signup-->
         </div>
         </section>
 </div>
@@ -220,6 +233,8 @@
 <footer>
 <div id="footer">
     <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Lotaku</span> - string</li>
+        <li class="elegant-license">SITE_LICENSE</li>
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>

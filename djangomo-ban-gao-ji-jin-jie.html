@@ -6,6 +6,8 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
+        <meta name="description" content="关闭html自动转意 1.对于单独的变量 用safe过滤器为单独的变量关闭自动转意： This will be escaped: {{ data }} This will not be escaped: {{ data|safe }} 对于模板块 为了控制模板的自动转意,用标签autoescape来包装整个模板(或者模板中常用的部分),就像这样： {% autoescape off %} Hello {{ name }} {% endautoescape %} autoescape 标签有两个参数on和off 有时,你可能想阻止一部分自动转意,对另一部分自动转意。 这是一个模板的例子：1 Auto-escaping is on by default. Hello {{ name }} {% autoescape off %} This will not be auto-escaped: {{ data ...
+" />
 <meta name="keywords" content="django, django, " />
         <title>Django模板高级进阶  · Lotaku
 </title>
@@ -170,6 +172,7 @@
     <span class="err">#</span> <span class="p">...</span>
 </pre></div>
 <section>
+<p id="comment-message">string </p>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
@@ -226,6 +229,16 @@
 </a></li>
             </ul>
 
+            <!-- Begin MailChimp Signup Form -->
+            <div id="mc_embed_signup">
+                <form action="string" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <h4>string</h4>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="string" required>
+                    <div class="clear"><input type="submit" value="string" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </form>
+            </div>
+
+            <!--End mc_embed_signup-->
         </div>
         </section>
 </div>
@@ -238,6 +251,8 @@
 <footer>
 <div id="footer">
     <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Lotaku</span> - string</li>
+        <li class="elegant-license">SITE_LICENSE</li>
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>
