@@ -59,7 +59,7 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>URLconf 技巧:减少重复输入</h3>
+            <h3 id="urlconf">URLconf 技巧:减少重复输入</h3>
 <p>1.我们可以把公共的前缀提取出来，作为第一个参数传给urlpatterns函</p>
 <div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">urls</span><span class="p">.</span><span class="n">defaults</span> <span class="n">import</span> <span class="o">*</span>
 
@@ -97,7 +97,7 @@
 </pre></div>
 
 
-<h3>调试模式中的特例</h3>
+<h3 id="_1">调试模式中的特例</h3>
 <p>说到动态构建 urlpatterns，你可能想利用这一技术，在 Django 的调试模式下修改 URLconf 的行为。 为了做到这一点，只要在运行时检查 DEBUG 配置项的值即可，如:</p>
 <div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">conf</span> <span class="n">import</span> <span class="n">settings</span>
 <span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">urls</span><span class="p">.</span><span class="n">defaults</span> <span class="n">import</span> <span class="o">*</span>
@@ -116,7 +116,7 @@
 
 
 <p>在这个例子中，URL链接/debuginfo/ 只在你的 DEBUG 配置项设为 True 时才有效。</p>
-<h3>URLconf，使用命名组</h3>
+<h3 id="urlconf_1">URLconf，使用命名组</h3>
 <div class="highlight"><pre><span class="n">urlpatterns</span> <span class="o">=</span> <span class="nx">patterns</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="p">(</span><span class="nb">r</span><span class="s1">&#39;^articles/(?P&lt;year&gt;\d{4})/$&#39;</span><span class="p">,</span> <span class="nx">views.year_archive</span><span class="p">),</span>
     <span class="p">(</span><span class="nb">r</span><span class="s1">&#39;^articles/(?P&lt;year&gt;\d{4})/(?P&lt;month&gt;\d{2})/$&#39;</span><span class="p">,</span> <span class="nx">views.month_archive</span><span class="p">),</span>
@@ -124,7 +124,7 @@
 </pre></div>
 
 
-<h3>对一个可选URL配置参数的优雅解决方法： URLconf里面的每一个模式都可以包含第三个数据： 一个关键字参数的字典：</h3>
+<h3 id="url-urlconf">对一个可选URL配置参数的优雅解决方法： URLconf里面的每一个模式都可以包含第三个数据： 一个关键字参数的字典：</h3>
 <div class="highlight"><pre><span class="cp"># urls.py</span>
 
 <span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">urls</span><span class="p">.</span><span class="n">defaults</span> <span class="n">import</span> <span class="o">*</span>
@@ -146,7 +146,7 @@
 </pre></div>
 
 
-<h3>伪造捕捉到的URLconf值</h3>
+<h3 id="urlconf_2">伪造捕捉到的URLconf值</h3>
 <div class="highlight"><pre><span class="n">urlpatterns</span> <span class="o">=</span> <span class="nx">patterns</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
     <span class="p">(</span><span class="nb">r</span><span class="s1">&#39;^mydata/birthday/$&#39;</span><span class="p">,</span> <span class="nx">views.my_view</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="s1">&#39;jan&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="s1">&#39;06&#39;</span><span class="p">}),</span>
     <span class="p">(</span><span class="nb">r</span><span class="s1">&#39;^mydata/(?P&lt;month&gt;\w{3})/(?P&lt;day&gt;\d\d)/$&#39;</span><span class="p">,</span> <span class="nx">views.my_view</span><span class="p">),</span>
@@ -154,9 +154,9 @@
 </pre></div>
 
 
-<h3>创建一个通用视图</h3>
+<h3 id="_2">创建一个通用视图</h3>
 <p>抽取出我们代码中共性的东西是一个很好的编程习惯。</p>
-<h3>使用缺省视图参数</h3>
+<h3 id="_3">使用缺省视图参数</h3>
 <div class="highlight"><pre><span class="err">#</span> <span class="nx">urls.py</span>
 
 <span class="nb">from</span> <span class="nx">django.conf.urls.defaults</span> <span class="k">import</span> <span class="o">*</span>
@@ -176,7 +176,7 @@
 
 
 <p>（注：我们已经注意到设置默认参数值是字符串 <code>‘1’</code> ，不是整数<code>1</code> 。为了保持一致，因为捕捉给<code>num</code> 的值总是字符串。)</p>
-<h3>特殊情况下的视图</h3>
+<h3 id="_4">特殊情况下的视图</h3>
 <p>利用URLconf从顶向下的解析顺序这个特点：</p>
 <div class="highlight"><pre><span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="err">&#39;&#39;</span><span class="p">,</span>
     <span class="err">#</span> <span class="p">...</span>
@@ -188,11 +188,11 @@
 
 
 <p>在这种情况下，象 /auth/user/add/ 的请求将会被 user_add_stage 视图处理。 尽管URL也匹配第二种模式，它会先匹配上面的模式。 （这是短路逻辑。）</p>
-<h3>从URL中捕获文本</h3>
+<h3 id="url">从URL中捕获文本</h3>
 <p>URL 传递给views的都是字符串值！在views里面处理时要注意。</p>
-<h3>包装视图函数</h3>
+<h3 id="_5">包装视图函数</h3>
 <p>处理重复代码</p>
-<h3>包含其他URLconf</h3>
+<h3 id="urlconf_3">包含其他URLconf</h3>
 <p>参考：<a href="http://djangobook.py3k.cn/2.0/chapter08/">http://djangobook.py3k.cn/2.0/chapter08/</a></p>
 <section>
 <div class="accordion" id="accordion2">

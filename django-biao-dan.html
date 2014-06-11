@@ -59,7 +59,7 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>简单示例</h3>
+            <h3 id="_1">简单示例</h3>
 <p>创建一个forms.py文件，放在app的目录下，与views.py在同个目录下。当然,这个不是硬性要求。</p>
 <div class="highlight"><pre><span class="n">from</span> <span class="n">django</span> <span class="n">import</span> <span class="n">forms</span>
 
@@ -104,14 +104,14 @@
 
 
 <p>我们的contact form只涉及字符串类型，它们会被清理成Unicode对象。如果我们使用整数型或日期型，form框架会确保方法使用合适的Python整数型或datetime.date型对象。</p>
-<h3>设置初始值</h3>
+<h3 id="_2">设置初始值</h3>
 <div class="highlight"><pre><span class="n">form</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">(</span>
             <span class="n">initial</span><span class="o">=</span><span class="p">{</span><span class="err">&#39;</span><span class="n">subject</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">I</span> <span class="n">love</span> <span class="n">your</span> <span class="n">site</span><span class="o">!</span><span class="err">&#39;</span><span class="p">}</span>
         <span class="p">)</span>
 </pre></div>
 
 
-<h3>自定义校验规则</h3>
+<h3 id="_3">自定义校验规则</h3>
 <div class="highlight"><pre><span class="n">from</span> <span class="n">django</span> <span class="n">import</span> <span class="n">forms</span>
 
 <span class="n">class</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="p">.</span><span class="n">Form</span><span class="p">)</span><span class="o">:</span>
@@ -129,7 +129,7 @@
 
 
 <p>Django的form系统自动寻找匹配的函数方法，该方法名称以clean_开头，并以字段名称结束。 如果有这样的方法，它将在校验时被调用。</p>
-<h3>指定标签</h3>
+<h3 id="_4">指定标签</h3>
 <div class="highlight"><pre><span class="n">class</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="p">.</span><span class="n">Form</span><span class="p">)</span><span class="o">:</span>
     <span class="n">subject</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="n">False</span><span class="p">,</span> <span class="o">**</span><span class="n">label</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Your</span> <span class="n">e</span><span class="o">-</span><span class="n">mail</span> <span class="n">address</span><span class="err">&#39;</span><span class="o">**</span> <span class="p">)</span>

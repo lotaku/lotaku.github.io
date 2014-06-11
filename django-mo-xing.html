@@ -59,14 +59,14 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>验证模型的有效性</h3>
+            <h3 id="_1">验证模型的有效性</h3>
 <p><code>python manage.py validate</code></p>
-<h3>模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句</h3>
+<h3 id="create-table">模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句</h3>
 <p><code>python manage.py sqlall books</code></p>
 <p>sqlall 命令并没有在数据库中真正创建数据表，只是把SQL语句段打印出来，这样你可以看到Django究竟会做些什么。</p>
-<h3>提交SQL语句至数据库的方法</h3>
+<h3 id="sql">提交SQL语句至数据库的方法</h3>
 <p><code>python manage.py syncdb</code></p>
-<h3>使用Django modle API创建对象时Django并未将对象保存至数据库内，除非你调用<code>save()</code> 方法</h3>
+<h3 id="django-modle-apidjangosave">使用Django modle API创建对象时Django并未将对象保存至数据库内，除非你调用<code>save()</code> 方法</h3>
 <div class="highlight"><pre><span class="n">p1</span> <span class="o">=</span> <span class="n">Publisher</span><span class="p">(...)</span>
 <span class="cp"># At this point, p1 is not saved to the database yet!</span>
 <span class="n">p1</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
@@ -74,7 +74,7 @@
 </pre></div>
 
 
-<h3>添加模块的字符串表现</h3>
+<h3 id="_2">添加模块的字符串表现</h3>
 <p>当我们打印整个publisher列表时，我们没有得到想要的有用信息，无法把````对象区分开来。我们可以简单解决这个问题，只需要为Publisher 对象添加一个方法 <strong>unicode</strong>() 。 <strong>unicode</strong>() 方法告诉Python如何将对象以unicode的方式显示出来。 为以上三个模型添加__unicode__()方法后，就可以看到效果了：</p>
 <div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">db</span> <span class="n">import</span> <span class="n">models</span>
 
@@ -91,9 +91,9 @@
 </pre></div>
 
 
-<h3>字段常用参数</h3>
+<h3 id="_3">字段常用参数</h3>
 <p>字段允许为空,eg：<code>website = models.URLField(blank=True)</code></p>
-<h3>日期型字段留空</h3>
+<h3 id="_4">日期型字段留空</h3>
 <p>如果你想允许一个日期型（DateField、TimeField、DateTimeField）或数字型（IntegerField、DecimalField、FloatField）字段为空，你需要使用null=True * 和* blank=True。  </p>
 <p>为了举例说明，让我们把Book模块修改成允许 publication_date为空。修改后的代码如下：</p>
 <div class="highlight"><pre><span class="n">class</span> <span class="n">Book</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">)</span><span class="o">:</span>
@@ -104,7 +104,7 @@
 </pre></div>
 
 
-<h3>插入和更新数据</h3>
+<h3 id="_5">插入和更新数据</h3>
 <p>你已经知道怎么做了： 先使用一些关键参数创建对象实例，如下：</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Publisher</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Apress</span><span class="err">&#39;</span><span class="p">,</span>
 <span class="p">...</span>         <span class="n">address</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">2855</span> <span class="n">Telegraph</span> <span class="n">Ave</span><span class="p">.</span><span class="err">&#39;</span><span class="p">,</span>
@@ -122,14 +122,14 @@
 </pre></div>
 
 
-<h3>选择对象</h3>
+<h3 id="_6">选择对象</h3>
 <p>从一个给定的模型中取出所有记录</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">all</span><span class="p">()</span>
 <span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">O</span><span class="err">&#39;</span><span class="n">Reilly</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 
 
-<h3>数据过滤</h3>
+<h3 id="_7">数据过滤</h3>
 <p>在Django API中，我们可以使用<code>filter()</code> 方法对数据进行过滤：</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Apress</span><span class="err">&#39;</span><span class="p">)</span>
 <span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">]</span>
@@ -149,7 +149,7 @@
 </pre></div>
 
 
-<h3>获取单个对象</h3>
+<h3 id="_8">获取单个对象</h3>
 <p>上面的例子中<code>filter()</code> 函数返回一个记录集，这个记录集是一个列表。 相对列表来说，有些时候我们更需要获取单个的对象， <code>get()</code> 方法就是在此时使用的：</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Apress&quot;</span><span class="p">)</span>
 <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span>
@@ -183,7 +183,7 @@
 </pre></div>
 
 
-<h3>数据排序</h3>
+<h3 id="_9">数据排序</h3>
 <p><code>order_by()</code></p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">O</span><span class="err">&#39;</span><span class="n">Reilly</span><span class="o">&gt;</span><span class="p">]</span>
@@ -220,21 +220,21 @@
 
 
 <p><code>class Meta</code>，内嵌于 Publisher 这个类的定义中。你可以在任意一个 模型 类中使用 Meta 类，来设置一些与特定模型相关的选项。 如果你设置了这个选项，那么除非你检索时特意额外地使用了 order_by()，否则，当你使用 Django 的数据库 API 去检索时，Publisher对象的相关返回值默认地都会按 name 字段排序。</p>
-<h3>连锁查询</h3>
+<h3 id="_10">连锁查询</h3>
 <p>我们已经知道如何对数据进行过滤和排序。 当然，通常我们需要同时进行过滤和排序查询的操作。 因此，你可以简单地写成这种“链式”的形式：</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="s">&quot;U.S.A.&quot;</span><span class="p">).</span><span class="n">order_by</span><span class="p">(</span><span class="s">&quot;-name&quot;</span><span class="p">)</span>
 <span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">O</span><span class="err">&#39;</span><span class="n">Reilly</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 
 
-<h3>限制返回的数据</h3>
+<h3 id="_11">限制返回的数据</h3>
 <p>另一个常用的需求就是取出固定数目的记录。 想象一下你有成千上万的出版商在你的数据库里， 但是你只想显示第一个。 你可以使用标准的Python列表裁剪语句：6</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">order_by</span><span class="p">(</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span>
 </pre></div>
 
 
-<h3>更新多个对象</h3>
+<h3 id="_12">更新多个对象</h3>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="mi">52</span><span class="p">).</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Apress</span> <span class="n">Publishing</span><span class="err">&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -253,7 +253,7 @@
 
 
 <p>update()方法会返回一个整型数值，表示受影响的记录条数。 在上面的例子中，这个值是2。</p>
-<h3>删除对象</h3>
+<h3 id="_13">删除对象</h3>
 <p>删除数据库中的对象只需调用该对象的delete()方法即可：</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;O&#39;Reilly&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">delete</span><span class="p">()</span>

@@ -59,9 +59,9 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <h3>其他语言</h3>
+            <h3 id="_1">其他语言</h3>
 <p>仅需添加<code>django.middleware.locale.LocaleMiddleware</code> 到<code>MIDDLEWARE_CLASSES</code> 设置中，并确保它在<code>django.contrib.sessions.middleware.SessionMiddleware</code> 之后</p>
-<h3>自定义字段标签</h3>
+<h3 id="_2">自定义字段标签</h3>
 <p>将Author.email的标签改为e-mail，中间有个横线。</p>
 <div class="highlight"><pre><span class="n">class</span> <span class="n">Author</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">)</span><span class="o">:</span>
     <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
@@ -76,7 +76,7 @@
     last_name = models.CharField(max_length=40)
     email = models.EmailField('e-mail',  blank=True)</p>
 <p>但这不适用于ManyToManyField 和ForeignKey字段，因为它们第一个参数必须是模块类。 那种情形，必须显式使用verbose_name这个参数名称。</p>
-<h3>自定义列表</h3>
+<h3 id="_3">自定义列表</h3>
 <p>比如说：在这个列表中可以看到作者的邮箱地址。如果能按照姓氏或名字来排序，那就更好了。</p>
 <p>为了达到这个目的，我们将为Author模块定义一个ModelAdmin类。 这个类是自定义管理工具的关键，其中最基本的一件事情是允许你指定列表中的字段。 打开admin.py并修改：</p>
 <div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">contrib</span> <span class="n">import</span> <span class="n">admin</span>
@@ -95,7 +95,7 @@
 <p>我们新建了一个类AuthorAdmin，它是从django.contrib.admin.ModelAdmin派生出来的子类，保存着一个类的自定义配置，以供管理工具使用。 我们只自定义了一项：list_display， 它是一个字段名称的元组，用于列表显示。 当然，这些字段名称必须是模块中有的。3</p>
 <p>我们修改了admin.site.register()调用，在Author后面添加了AuthorAdmin。你可以这样理解： 用AuthorAdmin选项注册Author模块。</p>
 <p>admin.site.register()函数接受一个ModelAdmin子类作为第二个参数。 如果你忽略第二个参数，Django将使用默认的选项。Publisher和Book的注册就属于这种情况。</p>
-<h3>添加一个快速查询栏。</h3>
+<h3 id="_4">添加一个快速查询栏。</h3>
 <p>向AuthorAdmin追加search_fields，如：</p>
 <div class="highlight"><pre><span class="n">class</span> <span class="n">AuthorAdmin</span><span class="p">(</span><span class="n">admin</span><span class="p">.</span><span class="n">ModelAdmin</span><span class="p">)</span><span class="o">:</span>
     <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">first_name</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">last_name</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">email</span><span class="err">&#39;</span><span class="p">)</span>
@@ -104,7 +104,7 @@
 
 
 <p>刷新浏览器，你会在页面顶端看到一个查询栏。 （见图6-9.）我们刚才所作的修改列表页面，添加了一个根据姓名查询的查询框。 正如用户所希望的那样，它是大小写敏感，并且对两个字段检索的查询框。如果查询"bar"，那么名字中含有Barney和姓氏中含有Hobarson的作者记录将被检索出来。</p>
-<h3>添加一些过滤器</h3>
+<h3 id="_5">添加一些过滤器</h3>
 <div class="highlight"><pre><span class="n">class</span> <span class="n">BookAdmin</span><span class="p">(</span><span class="n">admin</span><span class="p">.</span><span class="n">ModelAdmin</span><span class="p">)</span><span class="o">:</span>
     <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">publisher</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">publication_date</span><span class="err">&#39;</span><span class="p">)</span>
     <span class="n">list_filter</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">publication_date</span><span class="err">&#39;</span><span class="p">,)</span>
@@ -112,12 +112,12 @@
 </pre></div>
 
 
-<h3>改变默认的排序方式</h3>
+<h3 id="_6">改变默认的排序方式</h3>
 <div class="highlight"><pre><span class="n">ordering</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="o">-</span><span class="n">publication_date</span><span class="err">&#39;</span><span class="p">,)</span>
 </pre></div>
 
 
-<h3>自定义编辑表单</h3>
+<h3 id="_7">自定义编辑表单</h3>
 <p>首先，我们先自定义字段顺序。 默认地，表单中的字段顺序是与模块中定义是一致的。 我们可以通过使用ModelAdmin子类中的fields选项来改变它：</p>
 <div class="highlight"><pre><span class="n">class</span> <span class="n">BookAdmin</span><span class="p">(</span><span class="n">admin</span><span class="p">.</span><span class="n">ModelAdmin</span><span class="p">)</span><span class="o">:</span>
     <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">publisher</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">publication_date</span><span class="err">&#39;</span><span class="p">)</span>
@@ -129,7 +129,7 @@
 
 
 <p>通过fields这个选项，你可以排除一些不想被其他人编辑的fields 只要不选上不想被编辑的field(s)即可。 当你的admi用户只是被信任可以更改你的某一部分数据时，或者，你的数据被一些外部的程序自动处理而改变了了，你就可以用这个功能。 例如，在book数据库中，我们可以隐藏publication_date，以防止它被编辑。</p>
-<h3>针对多选字段</h3>
+<h3 id="_8">针对多选字段</h3>
 <p>使用filter_horizontal 或者 filter_vertical 。让我们把它添加到BookAdmin中，然后看看它的效果。</p>
 <div class="highlight"><pre><span class="n">class</span> <span class="n">BookAdmin</span><span class="p">(</span><span class="n">admin</span><span class="p">.</span><span class="n">ModelAdmin</span><span class="p">)</span><span class="o">:</span>
     <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">publisher</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">publication_date</span><span class="err">&#39;</span><span class="p">)</span>
@@ -141,7 +141,7 @@
 
 
 <p>刷新book编辑页面，你会看到Author区中有一个精巧的JavaScript过滤器，它允许你检索选项，然后将选中的authors从Available框移到Chosen框，还可以移回来。</p>
-<h3>装载过多的选项，为减少消耗，使用：</h3>
+<h3 id="_9">装载过多的选项，为减少消耗，使用：</h3>
 <p><code>raw_id_fields</code></p>
 <div class="highlight"><pre><span class="n">class</span> <span class="n">BookAdmin</span><span class="p">(</span><span class="n">admin</span><span class="p">.</span><span class="n">ModelAdmin</span><span class="p">)</span><span class="o">:</span>
     <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="err">&#39;</span><span class="n">title</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">publisher</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">publication_date</span><span class="err">&#39;</span><span class="p">)</span>
