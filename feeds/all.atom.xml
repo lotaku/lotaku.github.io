@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Lotaku</title><link href="http://lotaku.github.io/" rel="alternate"></link><link href="http://lotaku.github.io/feeds/all.atom.xml" rel="self"></link><id>http://lotaku.github.io/</id><updated>2014-06-11T00:00:00+02:00</updated><entry><title>待学习的项目</title><link href="http://lotaku.github.io/git.html" rel="alternate"></link><updated>2014-06-11T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-06-11:git.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;git在线电子书学习项目：https://www.gitbook.io/book/lvwzhen/git-tutorial&lt;/li&gt;
 &lt;/ul&gt;</summary><category term="git"></category><category term="教程"></category></entry><entry><title>git 学习笔记</title><link href="http://lotaku.github.io/git-xue-xi-bi-ji.html" rel="alternate"></link><updated>2014-06-11T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-06-11:git-xue-xi-bi-ji.html</id><summary type="html">&lt;h3&gt;问题记录及解决方法&lt;/h3&gt;
+=======
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lotaku</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/all.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2014-06-11T00:00:00+02:00</updated><entry><title>待学习的项目</title><link href="http://127.0.0.1:8000/git.html" rel="alternate"></link><updated>2014-06-11T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-06-11:git.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;git在线电子书学习项目：https://www.gitbook.io/book/lvwzhen/git-tutorial&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="git"></category><category term="教程"></category></entry><entry><title>git 学习笔记</title><link href="http://127.0.0.1:8000/git-xue-xi-bi-ji.html" rel="alternate"></link><updated>2014-06-11T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-06-11:git-xue-xi-bi-ji.html</id><summary type="html">&lt;h3&gt;问题记录及解决方法&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;在&lt;code&gt;git clone&lt;/code&gt;或者&lt;code&gt;git add remote {server}&lt;/code&gt;  时，报错，说证书校验有问题&lt;/p&gt;
@@ -19,13 +25,21 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+<<<<<<< HEAD
 &lt;p&gt;参考：&lt;a href="http://blog.csdn.net/ubuntu64fan/article/details/12373403"&gt;http://blog.csdn.net/ubuntu64fan/article/details/12373403&lt;/a&gt;&lt;/p&gt;</summary><category term="git"></category></entry><entry><title>博文书写语言-Markdown</title><link href="http://lotaku.github.io/bo-wen-shu-xie-yu-yan-markdown.html" rel="alternate"></link><updated>2014-06-10T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-06-10:bo-wen-shu-xie-yu-yan-markdown.html</id><summary type="html">&lt;h3&gt;安装&lt;/h3&gt;
+=======
+&lt;p&gt;参考：&lt;a href="http://blog.csdn.net/ubuntu64fan/article/details/12373403"&gt;http://blog.csdn.net/ubuntu64fan/article/details/12373403&lt;/a&gt;&lt;/p&gt;</summary><category term="git"></category></entry><entry><title>博文书写语言-Markdown</title><link href="http://127.0.0.1:8000/bo-wen-shu-xie-yu-yan-markdown.html" rel="alternate"></link><updated>2014-06-10T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-06-10:bo-wen-shu-xie-yu-yan-markdown.html</id><summary type="html">&lt;h3&gt;安装&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;学习&lt;/h3&gt;
+<<<<<<< HEAD
 &lt;p&gt;某网址。。。&lt;/p&gt;</summary><category term="markdown"></category></entry><entry><title>Pelican 学习</title><link href="http://lotaku.github.io/pelican%20learn.html" rel="alternate"></link><updated>2014-06-10T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-06-10:pelican learn.html</id><summary type="html">&lt;h3&gt;学习材料&lt;/h3&gt;
+=======
+&lt;p&gt;某网址。。。&lt;/p&gt;</summary><category term="markdown"></category></entry><entry><title>Pelican 学习</title><link href="http://127.0.0.1:8000/pelican%20learn.html" rel="alternate"></link><updated>2014-06-10T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-06-10:pelican learn.html</id><summary type="html">&lt;h3&gt;学习材料&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;ul&gt;
 &lt;li&gt;官方文档：&lt;a href="http://docs.getpelican.com/en/3.3.0/"&gt;http://docs.getpelican.com/en/3.3.0/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -103,8 +117,13 @@ THEME =u'/home/l/app/myblog3/mytheme/pelican-elegant-1.3'
 DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
 &lt;h1&gt;publishconf.py 添加：&lt;/h1&gt;
 &lt;/li&gt;
+<<<<<<< HEAD
 &lt;/ul&gt;</summary><category term="pelican"></category></entry><entry><title>Python 打包方案：distutils</title><link href="http://lotaku.github.io/python-da-bao-fang-an-distutils.html" rel="alternate"></link><updated>2014-06-10T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-06-10:python-da-bao-fang-an-distutils.html</id><summary type="html">&lt;h3&gt;Python 打包方案：distutils&lt;/h3&gt;
 &lt;p&gt;http://developer.51cto.com/art/201003/189317.htm&lt;/p&gt;</summary><category term="python打包"></category></entry><entry><title>Django-表单</title><link href="http://lotaku.github.io/django-biao-dan.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-29:django-biao-dan.html</id><summary type="html">&lt;h3&gt;简单示例&lt;/h3&gt;
+=======
+&lt;/ul&gt;</summary><category term="pelican"></category></entry><entry><title>Python 打包方案：distutils</title><link href="http://127.0.0.1:8000/python-da-bao-fang-an-distutils.html" rel="alternate"></link><updated>2014-06-10T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-06-10:python-da-bao-fang-an-distutils.html</id><summary type="html">&lt;h3&gt;Python 打包方案：distutils&lt;/h3&gt;
+&lt;p&gt;http://developer.51cto.com/art/201003/189317.htm&lt;/p&gt;</summary><category term="python打包"></category></entry><entry><title>Django-表单</title><link href="http://127.0.0.1:8000/django-biao-dan.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-29:django-biao-dan.html</id><summary type="html">&lt;h3&gt;简单示例&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;p&gt;创建一个forms.py文件，放在app的目录下，与views.py在同个目录下。当然,这个不是硬性要求。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;
 
@@ -179,7 +198,11 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
     &lt;span class="n"&gt;subject&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;EmailField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;required&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;False&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Your&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;mail&lt;/span&gt; &lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Textarea&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+<<<<<<< HEAD
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>Django常用命令</title><link href="http://lotaku.github.io/djangochang-yong-ming-ling.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-29:djangochang-yong-ming-ling.html</id><summary type="html">&lt;h3&gt;开启服务器&lt;/h3&gt;
+=======
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>Django常用命令</title><link href="http://127.0.0.1:8000/djangochang-yong-ming-ling.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-29:djangochang-yong-ming-ling.html</id><summary type="html">&lt;h3&gt;开启服务器&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;manage&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;runserver&lt;/span&gt;
 
 &lt;span class="n"&gt;or&lt;/span&gt;
@@ -189,7 +212,11 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
 &lt;span class="n"&gt;or&lt;/span&gt;
 
 &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;manage&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;runserver&lt;/span&gt; &lt;span class="mf"&gt;0.0.0.0&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8000&lt;/span&gt;
+<<<<<<< HEAD
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>Django高级视图和URL配置</title><link href="http://lotaku.github.io/djangogao-ji-shi-tu-he-urlpei-zhi.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-29:djangogao-ji-shi-tu-he-urlpei-zhi.html</id><summary type="html">&lt;h3&gt;URLconf 技巧:减少重复输入&lt;/h3&gt;
+=======
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>Django高级视图和URL配置</title><link href="http://127.0.0.1:8000/djangogao-ji-shi-tu-he-urlpei-zhi.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-29:djangogao-ji-shi-tu-he-urlpei-zhi.html</id><summary type="html">&lt;h3&gt;URLconf 技巧:减少重复输入&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;p&gt;1.我们可以把公共的前缀提取出来，作为第一个参数传给urlpatterns函&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urls&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;defaults&lt;/span&gt; &lt;span class="n"&gt;import&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;
 
@@ -323,7 +350,11 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
 &lt;h3&gt;包装视图函数&lt;/h3&gt;
 &lt;p&gt;处理重复代码&lt;/p&gt;
 &lt;h3&gt;包含其他URLconf&lt;/h3&gt;
+<<<<<<< HEAD
 &lt;p&gt;参考：&lt;a href="http://djangobook.py3k.cn/2.0/chapter08/"&gt;http://djangobook.py3k.cn/2.0/chapter08/&lt;/a&gt;&lt;/p&gt;</summary><category term="django"></category></entry><entry><title>Django模板高级进阶</title><link href="http://lotaku.github.io/djangomo-ban-gao-ji-jin-jie.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-29:djangomo-ban-gao-ji-jin-jie.html</id><summary type="html">&lt;h3&gt;关闭html自动转意&lt;/h3&gt;
+=======
+&lt;p&gt;参考：&lt;a href="http://djangobook.py3k.cn/2.0/chapter08/"&gt;http://djangobook.py3k.cn/2.0/chapter08/&lt;/a&gt;&lt;/p&gt;</summary><category term="django"></category></entry><entry><title>Django模板高级进阶</title><link href="http://127.0.0.1:8000/djangomo-ban-gao-ji-jin-jie.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-29:djangomo-ban-gao-ji-jin-jie.html</id><summary type="html">&lt;h3&gt;关闭html自动转意&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;p&gt;1.对于单独的变量
 用safe过滤器为单独的变量关闭自动转意：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;will&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;escaped&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;
@@ -432,8 +463,13 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
 &lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="k"&gt;register&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;simple_tag&lt;/span&gt;
 &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;current_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
     &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="p"&gt;...&lt;/span&gt;
+<<<<<<< HEAD
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>Linux常用命令</title><link href="http://lotaku.github.io/linuxchang-yong-ming-ling.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-29:linuxchang-yong-ming-ling.html</id><summary type="html">&lt;p&gt;查看CPU温度:&lt;code&gt;sensors&lt;/code&gt; &lt;br /&gt;
 查看占8000端口的程序：&lt;code&gt;lsof -i:8000&lt;/code&gt;   &lt;/p&gt;</summary><category term="linux"></category></entry><entry><title>Django-Admin</title><link href="http://lotaku.github.io/django-admin.html" rel="alternate"></link><updated>2014-05-28T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-28:django-admin.html</id><summary type="html">&lt;h3&gt;其他语言&lt;/h3&gt;
+=======
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>Linux常用命令</title><link href="http://127.0.0.1:8000/linuxchang-yong-ming-ling.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-29:linuxchang-yong-ming-ling.html</id><summary type="html">&lt;p&gt;查看CPU温度:&lt;code&gt;sensors&lt;/code&gt; &lt;br /&gt;
+查看占8000端口的程序：&lt;code&gt;lsof -i:8000&lt;/code&gt;   &lt;/p&gt;</summary><category term="linux"></category></entry><entry><title>Django-Admin</title><link href="http://127.0.0.1:8000/django-admin.html" rel="alternate"></link><updated>2014-05-28T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-28:django-admin.html</id><summary type="html">&lt;h3&gt;其他语言&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;p&gt;仅需添加&lt;code&gt;django.middleware.locale.LocaleMiddleware&lt;/code&gt; 到&lt;code&gt;MIDDLEWARE_CLASSES&lt;/code&gt; 设置中，并确保它在&lt;code&gt;django.contrib.sessions.middleware.SessionMiddleware&lt;/code&gt; 之后&lt;/p&gt;
 &lt;h3&gt;自定义字段标签&lt;/h3&gt;
 &lt;p&gt;将Author.email的标签改为e-mail，中间有个横线。&lt;/p&gt;
@@ -524,7 +560,11 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
     &lt;span class="n"&gt;ordering&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;publication_date&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,)&lt;/span&gt;
     &lt;span class="n"&gt;filter_horizontal&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;authors&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,)&lt;/span&gt;
     &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;raw_id_fields&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;publisher&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;
+<<<<<<< HEAD
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>Django-模型</title><link href="http://lotaku.github.io/django-mo-xing.html" rel="alternate"></link><updated>2014-05-28T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-28:django-mo-xing.html</id><summary type="html">&lt;h3&gt;验证模型的有效性&lt;/h3&gt;
+=======
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>Django-模型</title><link href="http://127.0.0.1:8000/django-mo-xing.html" rel="alternate"></link><updated>2014-05-28T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-28:django-mo-xing.html</id><summary type="html">&lt;h3&gt;验证模型的有效性&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;p&gt;&lt;code&gt;python manage.py validate&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;python manage.py sqlall books&lt;/code&gt;&lt;/p&gt;
@@ -740,7 +780,11 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
 &lt;span class="nx"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;most&lt;/span&gt; &lt;span class="nx"&gt;recent&lt;/span&gt; &lt;span class="nb"&gt;call&lt;/span&gt; &lt;span class="nb"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="nb"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;lt;console&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;module&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="nx"&gt;AttributeError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Manager&amp;#39;&lt;/span&gt; &lt;span class="nb"&gt;object&lt;/span&gt; &lt;span class="nx"&gt;has&lt;/span&gt; &lt;span class="nx"&gt;no&lt;/span&gt; &lt;span class="nx"&gt;attribute&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;delete&amp;#39;&lt;/span&gt;
+<<<<<<< HEAD
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>python库-MySQLdb</title><link href="http://lotaku.github.io/pythonku-mysqldb.html" rel="alternate"></link><updated>2014-05-28T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-28:pythonku-mysqldb.html</id><summary type="html">&lt;h3&gt;以下是常用代码&lt;/h3&gt;
+=======
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="django"></category></entry><entry><title>python库-MySQLdb</title><link href="http://127.0.0.1:8000/pythonku-mysqldb.html" rel="alternate"></link><updated>2014-05-28T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-28:pythonku-mysqldb.html</id><summary type="html">&lt;h3&gt;以下是常用代码&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
  2
  3
@@ -799,9 +843,15 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
     &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;SystemExit&lt;/span&gt;
 &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;数据库: &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;database_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;  创建成功&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+<<<<<<< HEAD
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="python"></category><category term="mysql"></category></entry><entry><title>系统修改记录</title><link href="http://lotaku.github.io/xi-tong-xiu-gai-ji-lu.html" rel="alternate"></link><updated>2014-01-13T00:00:00+01:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-01-13:xi-tong-xiu-gai-ji-lu.html</id><summary type="html">&lt;h4&gt;2013-01-13&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="mf"&gt;1.&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;在文件：/etc/apache2/sites-available/default 顶部加入 ：ServerName 127.0.0.1&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary><category term="系统"></category></entry><entry><title>学习体会</title><link href="http://lotaku.github.io/xue-xi-ti-hui.html" rel="alternate"></link><updated>2013-01-17T00:00:00+01:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2013-01-17:xue-xi-ti-hui.html</id><summary type="html">&lt;h1&gt;学习体会 随记&lt;/h1&gt;
+=======
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><category term="python"></category><category term="mysql"></category></entry><entry><title>系统修改记录</title><link href="http://127.0.0.1:8000/xi-tong-xiu-gai-ji-lu.html" rel="alternate"></link><updated>2014-01-13T00:00:00+01:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-01-13:xi-tong-xiu-gai-ji-lu.html</id><summary type="html">&lt;h4&gt;2013-01-13&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="mf"&gt;1.&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;在文件：/etc/apache2/sites-available/default 顶部加入 ：ServerName 127.0.0.1&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="系统"></category></entry><entry><title>学习体会</title><link href="http://127.0.0.1:8000/xue-xi-ti-hui.html" rel="alternate"></link><updated>2013-01-17T00:00:00+01:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2013-01-17:xue-xi-ti-hui.html</id><summary type="html">&lt;h1&gt;学习体会 随记&lt;/h1&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;ol&gt;
 &lt;li&gt;熟能生巧，起码要坚持学习27天！才能下结论。&lt;/li&gt;
 &lt;li&gt;学习编程，数学逻辑很重要，要安排时间学习。&lt;/li&gt;
@@ -816,7 +866,11 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
 &lt;p&gt;一定要记得，自己最初的目的！ &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;
+<<<<<<< HEAD
 &lt;/ol&gt;</summary><category term="学习"></category></entry><entry><title>学习过程中的问题记录</title><link href="http://lotaku.github.io/xue-xi-guo-cheng-zhong-de-wen-ti-ji-lu.html" rel="alternate"></link><updated>2013-01-13T00:00:00+01:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2013-01-13:xue-xi-guo-cheng-zhong-de-wen-ti-ji-lu.html</id><summary type="html">&lt;h1&gt;VIM 相关&lt;/h1&gt;
+=======
+&lt;/ol&gt;</summary><category term="学习"></category></entry><entry><title>学习过程中的问题记录</title><link href="http://127.0.0.1:8000/xue-xi-guo-cheng-zhong-de-wen-ti-ji-lu.html" rel="alternate"></link><updated>2013-01-13T00:00:00+01:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2013-01-13:xue-xi-guo-cheng-zhong-de-wen-ti-ji-lu.html</id><summary type="html">&lt;h1&gt;VIM 相关&lt;/h1&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;h4&gt;1.插件ultisnips 会在以下路径搜索快捷输入，有冲突提示&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;路径1：/usr/share/vim/vim74/bundle/ultisnips/UltiSnips&lt;/li&gt;
@@ -831,7 +885,11 @@ DISQUS_SITENAME = u'lotaku'&lt;/p&gt;
 &lt;li&gt;/home/l/app/k-vim/snippets&lt;/li&gt;
 &lt;li&gt;/home/l/app/k-vim/bundle/ultisnips/UltiSnips&lt;/li&gt;
 &lt;/ul&gt;
+<<<<<<< HEAD
 &lt;p&gt;ceshi&lt;/p&gt;</summary><category term="学习"></category></entry><entry><title>学习进度记录</title><link href="http://lotaku.github.io/xue-xi-jin-du-ji-lu.html" rel="alternate"></link><updated>2013-01-13T00:00:00+01:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2013-01-13:xue-xi-jin-du-ji-lu.html</id><summary type="html">&lt;h4&gt;学习中：&lt;/h4&gt;
+=======
+&lt;p&gt;ceshi&lt;/p&gt;</summary><category term="学习"></category></entry><entry><title>学习进度记录</title><link href="http://127.0.0.1:8000/xue-xi-jin-du-ji-lu.html" rel="alternate"></link><updated>2013-01-13T00:00:00+01:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2013-01-13:xue-xi-jin-du-ji-lu.html</id><summary type="html">&lt;h4&gt;学习中：&lt;/h4&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;pelican+github 搭建博客[DONE] &lt;/p&gt;

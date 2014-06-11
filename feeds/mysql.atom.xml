@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Lotaku</title><link href="http://lotaku.github.io/" rel="alternate"></link><link href="http://lotaku.github.io/feeds/mysql.atom.xml" rel="self"></link><id>http://lotaku.github.io/</id><updated>2014-05-28T00:00:00+02:00</updated><entry><title>python库-MySQLdb</title><link href="http://lotaku.github.io/pythonku-mysqldb.html" rel="alternate"></link><updated>2014-05-28T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-28:pythonku-mysqldb.html</id><summary type="html">&lt;h3&gt;以下是常用代码&lt;/h3&gt;
+=======
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lotaku</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/mysql.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2014-05-28T00:00:00+02:00</updated><entry><title>python库-MySQLdb</title><link href="http://127.0.0.1:8000/pythonku-mysqldb.html" rel="alternate"></link><updated>2014-05-28T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-28:pythonku-mysqldb.html</id><summary type="html">&lt;h3&gt;以下是常用代码&lt;/h3&gt;
+>>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
 &lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
  2
  3
