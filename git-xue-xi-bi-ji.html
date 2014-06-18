@@ -64,19 +64,18 @@
         <div class="span8 offset2 article-content">
 
             <h3 id="_1">问题记录及解决方法</h3>
-<ul>
-<li>
-<p>在<code>git clone</code>或者<code>git add remote {server}</code>  时，报错，说证书校验有问题</p>
-<h1 id="_2">报错代码</h1>
-<p>error: server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none</p>
-</li>
-</ul>
-<p>最简单的解决方法是调用前加一个环境变量：</p>
+<h3 id="git-clonegit-add-remote-server">问题：在<code>git clone</code>或者<code>git add remote {server}</code>  时，报错，说证书校验有问题</h3>
+<div class="highlight"><pre><span class="cp">#报错代码</span>
+<span class="nl">error:</span> <span class="n">server</span> <span class="n">certificate</span> <span class="n">verification</span> <span class="n">failed</span><span class="p">.</span> <span class="n">CAfile</span><span class="o">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certs</span><span class="o">/</span><span class="n">ca</span><span class="o">-</span><span class="n">certificates</span><span class="p">.</span><span class="n">crt</span> <span class="n">CRLfile</span><span class="o">:</span> <span class="n">none</span>
+</pre></div>
+
+
+<p>解决方法 1 ：最简单的解决方法是调用前加一个环境变量：</p>
 <div class="highlight"><pre><span class="err">$</span> <span class="n">export</span> <span class="n">GIT_SSL_NO_VERIFY</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 
 
-<p>但是这个方法肯定不方便，更好的方法是：</p>
+<p>解决方法 2 ：比1更好.</p>
 <div class="highlight"><pre><span class="err">$</span> <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">http</span><span class="p">.</span><span class="n">sslverify</span> <span class="nb">false</span>
 </pre></div>
 
