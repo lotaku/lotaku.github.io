@@ -6,10 +6,10 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
-        <meta name="description" content="git在线电子书学习项目等
+        <meta name="description" content="git常用命令，问题记录等
 " />
-<meta name="keywords" content="git, 教程, misc, " />
-        <title>待学习的项目  · Lotaku
+<meta name="keywords" content="git, misc, " />
+        <title>git 问题记录及解决方法  · Lotaku
 </title>
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -56,23 +56,48 @@
 <article>
 <div class="row-fluid">
     <header class="page_header span10 offset2">
-    <h1><a href="http://lotaku.github.io/git.html"> 待学习的项目  </a></h1>
+    <h1><a href="http://lotaku.github.io/git-wen-ti-ji-lu-ji-jie-jue-fang-fa.html"> git 问题记录及解决方法  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <ul>
-<li>git在线电子书学习项目：https://www.gitbook.io/book/lvwzhen/git-tutorial</li>
-</ul>
+            <h3 id="git-clonegit-add-remote-server">问题：在<code>git clone</code>或者<code>git add remote {server}</code>  时，报错，说证书校验有问题</h3>
+<div class="highlight"><pre><span class="cp">#报错代码</span>
+<span class="nl">error:</span> <span class="n">server</span> <span class="n">certificate</span> <span class="n">verification</span> <span class="n">failed</span><span class="p">.</span> <span class="n">CAfile</span><span class="o">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="n">certs</span><span class="o">/</span><span class="n">ca</span><span class="o">-</span><span class="n">certificates</span><span class="p">.</span><span class="n">crt</span> <span class="n">CRLfile</span><span class="o">:</span> <span class="n">none</span>
+</pre></div>
+
+
+<p>解决方法 1 ：最简单的解决方法是调用前加一个环境变量：</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">export</span> <span class="n">GIT_SSL_NO_VERIFY</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+
+
+<p>解决方法 2 ：比1更好.</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">http</span><span class="p">.</span><span class="n">sslverify</span> <span class="nb">false</span>
+</pre></div>
+
+
+<p>参考：<a href="http://blog.csdn.net/ubuntu64fan/article/details/12373403">http://blog.csdn.net/ubuntu64fan/article/details/12373403</a></p>
+<h3 id="git">问题：Git 每次提交时的用户名和密码设置</h3>
+<p>原因：在克隆（clone）分支时使用了 HTTPS 的地址 <br />
+解决方法：切换到 SSH 方式,可以参考<a href="https://help.github.com/articles/generating-ssh-keys">官方文档</a>。</p>
+<div class="highlight"><pre><span class="cp">#进入本地的git项目</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">remote</span> <span class="n">set</span><span class="o">-</span><span class="n">url</span> <span class="n">origin</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">:</span><span class="n">user</span><span class="o">/</span><span class="n">repo</span><span class="p">.</span><span class="n">git</span>
+</pre></div>
+
+
+<h3 id="commit-permission-denied-publickey">问题:commit时出现 Permission denied (publickey).</h3>
+<p>原因： SSH key 没有设置或已经失效（譬如升级到 Mountain Lion 系统后） <br />
+解决方法：参考<a href="https://help.github.com/articles/generating-ssh-keys">官方文档</a>。</p>
 <section>
 <p id="comment-message">那么，你的想法呢？以上有哪些错误或不清晰的么？请在这里评论... </p>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://lotaku.github.io/git.html#disqus_thread">
+                href="http://lotaku.github.io/git-wen-ti-ji-lu-ji-jie-jue-fang-fa.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -82,8 +107,8 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'lotaku';
-        var disqus_identifier = 'http://lotaku.github.io/git.html';
-    var disqus_url = 'http://lotaku.github.io/git.html';
+        var disqus_identifier = 'http://lotaku.github.io/git-wen-ti-ji-lu-ji-jie-jue-fang-fa.html';
+    var disqus_url = 'http://lotaku.github.io/git-wen-ti-ji-lu-ji-jie-jue-fang-fa.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -103,7 +128,9 @@
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="http://lotaku.github.io/git-wen-ti-ji-lu-ji-jie-jue-fang-fa.html" title="Previous: git 问题记录及解决方法">git 问题记录及解决方法</a></li>
+                <li class="previous_article">« <a href="http://lotaku.github.io/bo-wen-shu-xie-yu-yan-markdown.html" title="Previous: 博文书写语言-Markdown">博文书写语言-Markdown</a></li>
+ 
+                <li class="next_article"><a href="http://lotaku.github.io/git.html" title="Next: 待学习的项目">待学习的项目</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -119,9 +146,6 @@
             <ul class="list-of-tags tags-in-article"> 
                 <li><a href="/tags.html#git-ref">git
                     <span>2</span>
-</a></li>
-                <li><a href="/tags.html#教程-ref">教程
-                    <span>1</span>
 </a></li>
             </ul>
 
