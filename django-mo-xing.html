@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lotaku" />
+        <meta name="copyright" content="Lotaku" />
+
+        <meta name="description" content="验证模型的有效性 python manage.py validate 模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句 python manage.py sqlall books sqlall 命令并没有在数据库中真正创建数据表，只是把SQL语句段打印出来，这样你可以看到Django究竟会做些什么。 提交SQL语句至数据库的方法 python manage.py syncdb 使用Django modle API创建对象时Django并未将对象保存至数据库内，除非你调用save() 方法 p1 = Publisher(...) # At this point, p1 is not saved to the database yet! p1.save() # Now it is. 添加模块的字符串表现 当我们打印整个publisher列表时 ...
+" />
+<meta name="keywords" content="django, django, " />
+        <title>Django-模型  · Lotaku
+</title>
+        <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://lotaku.github.io/theme/css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://lotaku.github.io/theme/css/solarizedlight.css" media="screen">
+        <link rel="shortcut icon" href="http://lotaku.github.io/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="http://lotaku.github.io/theme/images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://lotaku.github.io/theme/images/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://lotaku.github.io/theme/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://lotaku.github.io/theme/images/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://lotaku.github.io/theme/images/apple-touch-icon-144x144.png" />
+        <link rel="icon" href="http://lotaku.github.io/theme/images/apple-touch-icon-144x144.png" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://lotaku.github.io/"><span class=site-name>Lotaku-罗塔库</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="http://lotaku.github.io">首页</a></li>
+                            <li ><a href="http://lotaku.github.io/categories.html">分类</a></li>
+                            <li ><a href="http://lotaku.github.io/tags.html">标签</a></li>
+                            <li ><a href="http://lotaku.github.io/archives.html">归档</a></li>
+
+                            <li ><a href="http://lotaku.github.io/pages/guan-yu-wo.html">关于我</a></li>
+
+                            <li><form class="navbar-search" action="http://lotaku.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page_header span10 offset2">
+    <h1><a href="http://lotaku.github.io/django-mo-xing.html"> Django-模型  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <h3 id="_1">验证模型的有效性</h3>
+<p><code>python manage.py validate</code></p>
+<h3 id="create-table">模型确认没问题了，运行下面的命令来生成 CREATE TABLE 语句</h3>
+<p><code>python manage.py sqlall books</code></p>
+<p>sqlall 命令并没有在数据库中真正创建数据表，只是把SQL语句段打印出来，这样你可以看到Django究竟会做些什么。</p>
+<h3 id="sql">提交SQL语句至数据库的方法</h3>
+<p><code>python manage.py syncdb</code></p>
+<h3 id="django-modle-apidjangosave">使用Django modle API创建对象时Django并未将对象保存至数据库内，除非你调用<code>save()</code> 方法</h3>
+<div class="highlight"><pre><span class="n">p1</span> <span class="o">=</span> <span class="n">Publisher</span><span class="p">(...)</span>
+<span class="cp"># At this point, p1 is not saved to the database yet!</span>
+<span class="n">p1</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
+<span class="cp"># Now it is.</span>
+</pre></div>
+
+
+<h3 id="_2">添加模块的字符串表现</h3>
+<p>当我们打印整个publisher列表时，我们没有得到想要的有用信息，无法把````对象区分开来。我们可以简单解决这个问题，只需要为Publisher 对象添加一个方法 <strong>unicode</strong>() 。 <strong>unicode</strong>() 方法告诉Python如何将对象以unicode的方式显示出来。 为以上三个模型添加__unicode__()方法后，就可以看到效果了：</p>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">django</span><span class="p">.</span><span class="n">db</span> <span class="n">import</span> <span class="n">models</span>
+
+<span class="n">class</span> <span class="n">Publisher</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">state_province</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">country</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">website</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">URLField</span><span class="p">()</span>
+
+    <span class="o">**</span><span class="n">def</span> <span class="n">__unicode__</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:**</span>
+        <span class="o">**</span><span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="o">**</span>
+</pre></div>
+
+
+<h3 id="_3">字段常用参数</h3>
+<p>字段允许为空,eg：<code>website = models.URLField(blank=True)</code></p>
+<h3 id="_4">日期型字段留空</h3>
+<p>如果你想允许一个日期型（DateField、TimeField、DateTimeField）或数字型（IntegerField、DecimalField、FloatField）字段为空，你需要使用null=True * 和* blank=True。  </p>
+<p>为了举例说明，让我们把Book模块修改成允许 publication_date为空。修改后的代码如下：</p>
+<div class="highlight"><pre><span class="n">class</span> <span class="n">Book</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
+    <span class="n">publisher</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Publisher</span><span class="p">)</span>
+    <span class="n">publication_date</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">DateField</span><span class="p">(</span><span class="o">**</span><span class="n">blank</span><span class="o">=</span><span class="n">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="n">True</span><span class="o">**</span> <span class="p">)</span>
+</pre></div>
+
+
+<h3 id="_5">插入和更新数据</h3>
+<p>你已经知道怎么做了： 先使用一些关键参数创建对象实例，如下：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Publisher</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Apress</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="p">...</span>         <span class="n">address</span><span class="o">=</span><span class="err">&#39;</span><span class="mi">2855</span> <span class="n">Telegraph</span> <span class="n">Ave</span><span class="p">.</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="p">...</span>         <span class="n">city</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Berkeley</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="p">...</span>         <span class="n">state_province</span><span class="o">=</span><span class="err">&#39;</span><span class="n">CA</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="p">...</span>         <span class="n">country</span><span class="o">=</span><span class="err">&#39;</span><span class="n">U</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">A</span><span class="p">.</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="p">...</span>         <span class="n">website</span><span class="o">=</span><span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//www.apress.com/&#39;)</span>
+</pre></div>
+
+
+<p>这个对象实例并 没有 对数据库做修改。 在调用<code>save()</code> 方法之前，记录并没有保存至数据库，像这样：<code>&gt;&gt;&gt; p.save()</code></p>
+<p>接下来再调用 save() 将不会创建新的记录，而只是修改记录内容（也就是 执行 UPDATE SQL语句，而不是 INSERT 语句）：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">Apress</span> <span class="n">Publishing</span><span class="err">&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+
+
+<h3 id="_6">选择对象</h3>
+<p>从一个给定的模型中取出所有记录</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">all</span><span class="p">()</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">O</span><span class="err">&#39;</span><span class="n">Reilly</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<h3 id="_7">数据过滤</h3>
+<p>在Django API中，我们可以使用<code>filter()</code> 方法对数据进行过滤：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Apress</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>其他类型的查找也可以使用：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name__contains</span><span class="o">=</span><span class="s">&quot;press&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>在 <code>name</code> 和 <code>contains</code> 之间有双下划线。和Python一样，Django也使用双下划线来表明会进行一些魔术般的操作。这里，contains部分会被Django翻译成LIKE语句：</p>
+<div class="highlight"><pre><span class="n">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">city</span><span class="p">,</span> <span class="n">state_province</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="n">website</span>
+<span class="n">FROM</span> <span class="n">books_publisher</span>
+<span class="n">WHERE</span> <span class="n">name</span> <span class="n">LIKE</span> <span class="err">&#39;</span><span class="o">%</span><span class="n">press</span><span class="o">%</span><span class="err">&#39;</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="_8">获取单个对象</h3>
+<p>上面的例子中<code>filter()</code> 函数返回一个记录集，这个记录集是一个列表。 相对列表来说，有些时候我们更需要获取单个的对象， <code>get()</code> 方法就是在此时使用的：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Apress&quot;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>这样，就返回了单个对象，而不是列表（更准确的说，QuerySet)。 所以，如果结果是多个对象，会导致抛出异常：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="s">&quot;U.S.A.&quot;</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span><span class="o">:</span>
+    <span class="p">...</span>
+<span class="nl">MultipleObjectsReturned:</span> <span class="n">get</span><span class="p">()</span> <span class="n">returned</span> <span class="n">more</span> <span class="n">than</span> <span class="n">one</span> <span class="n">Publisher</span> <span class="o">--</span>
+    <span class="n">it</span> <span class="n">returned</span> <span class="mi">2</span><span class="o">!</span> <span class="n">Lookup</span> <span class="n">parameters</span> <span class="n">were</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">country</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">U</span><span class="p">.</span><span class="n">S</span><span class="p">.</span><span class="n">A</span><span class="p">.</span><span class="err">&#39;</span><span class="p">}</span>
+</pre></div>
+
+
+<p>如果查询没有返回结果也会抛出异常：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Penguin&quot;</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span><span class="o">:</span>
+    <span class="p">...</span>
+<span class="nl">DoesNotExist:</span> <span class="n">Publisher</span> <span class="n">matching</span> <span class="n">query</span> <span class="n">does</span> <span class="n">not</span> <span class="n">exist</span><span class="p">.</span>
+</pre></div>
+
+
+<p>这个 DoesNotExist 异常 是 Publisher 这个 model 类的一个属性，即 Publisher.DoesNotExist。在你的应用中，你可以捕获并处理这个异常，像这样：</p>
+<div class="highlight"><pre><span class="k">try</span><span class="o">:</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Publisher</span><span class="o">.</span><span class="na">objects</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Apress&#39;</span><span class="o">)</span>
+<span class="n">except</span> <span class="n">Publisher</span><span class="o">.</span><span class="na">DoesNotExist</span><span class="o">:</span>
+    <span class="n">print</span> <span class="s2">&quot;Apress isn&#39;t in the database yet.&quot;</span>
+<span class="k">else</span><span class="o">:</span>
+    <span class="n">print</span> <span class="s2">&quot;Apress is in the database.&quot;</span>
+</pre></div>
+
+
+<h3 id="_9">数据排序</h3>
+<p><code>order_by()</code></p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">O</span><span class="err">&#39;</span><span class="n">Reilly</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>如果需要以多个字段为标准进行排序（第二个字段会在第一个字段的值相同的情况下被使用到），使用多个参数就可以了，如下：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&quot;state_province&quot;</span><span class="p">,</span> <span class="s">&quot;address&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">O</span><span class="err">&#39;</span><span class="n">Reilly</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>我们还可以指定逆向排序，在前面加一个减号 - 前缀：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">order_by</span><span class="p">(</span><span class="s">&quot;-name&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">O</span><span class="err">&#39;</span><span class="n">Reilly</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>尽管很灵活，但是每次都要用 order_by() 显得有点啰嗦。 大多数时间你通常只会对某些 字段进行排序。 在这种情况下，Django让你可以指定模型的缺省排序方式：</p>
+<div class="highlight"><pre><span class="n">class</span> <span class="n">Publisher</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">state_province</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">country</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">website</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">URLField</span><span class="p">()</span>
+
+    <span class="n">def</span> <span class="n">__unicode__</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">name</span>
+
+    <span class="o">**</span><span class="n">class</span> <span class="n">Meta</span><span class="o">:**</span>
+        <span class="o">**</span><span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">]</span><span class="o">**</span>
+</pre></div>
+
+
+<p><code>class Meta</code>，内嵌于 Publisher 这个类的定义中。你可以在任意一个 模型 类中使用 Meta 类，来设置一些与特定模型相关的选项。 如果你设置了这个选项，那么除非你检索时特意额外地使用了 order_by()，否则，当你使用 Django 的数据库 API 去检索时，Publisher对象的相关返回值默认地都会按 name 字段排序。</p>
+<h3 id="_10">连锁查询</h3>
+<p>我们已经知道如何对数据进行过滤和排序。 当然，通常我们需要同时进行过滤和排序查询的操作。 因此，你可以简单地写成这种“链式”的形式：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="s">&quot;U.S.A.&quot;</span><span class="p">).</span><span class="n">order_by</span><span class="p">(</span><span class="s">&quot;-name&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">O</span><span class="err">&#39;</span><span class="n">Reilly</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<h3 id="_11">限制返回的数据</h3>
+<p>另一个常用的需求就是取出固定数目的记录。 想象一下你有成千上万的出版商在你的数据库里， 但是你只想显示第一个。 你可以使用标准的Python列表裁剪语句：6</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">order_by</span><span class="p">(</span><span class="err">&#39;</span><span class="n">name</span><span class="err">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<h3 id="_12">更新多个对象</h3>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">id</span><span class="o">=</span><span class="mi">52</span><span class="p">).</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Apress</span> <span class="n">Publishing</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>与之等同的SQL语句变得更高效，并且不会引起竞态条件。</p>
+<div class="highlight"><pre><span class="n">UPDATE</span> <span class="n">books_publisher</span>
+<span class="n">SET</span> <span class="n">name</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">Apress</span> <span class="n">Publishing</span><span class="err">&#39;</span>
+<span class="n">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">52</span><span class="p">;</span>
+</pre></div>
+
+
+<p>update()方法对于任何结果集（QuerySet）均有效，这意味着你可以同时更新多条记录。 以下示例演示如何将所有Publisher的country字段值由’U.S.A’更改为’USA’：11</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">all</span><span class="p">().</span><span class="n">update</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="err">&#39;</span><span class="n">USA</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="mi">2</span>
+</pre></div>
+
+
+<p>update()方法会返回一个整型数值，表示受影响的记录条数。 在上面的例子中，这个值是2。</p>
+<h3 id="_13">删除对象</h3>
+<p>删除数据库中的对象只需调用该对象的delete()方法即可：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;O&#39;Reilly&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">all</span><span class="p">()</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">Publisher</span><span class="o">:</span> <span class="n">Apress</span> <span class="n">Publishing</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<p>同样我们可以在结果集上调用delete()方法同时删除多条记录。这一点与我们上一小节提到的update()方法相似：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="err">&#39;</span><span class="n">USA</span><span class="err">&#39;</span><span class="p">).</span><span class="n">delete</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">all</span><span class="p">().</span><span class="n">delete</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Publisher</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">all</span><span class="p">()</span>
+<span class="p">[]</span>
+</pre></div>
+
+
+<p>删除数据时要谨慎！ 为了预防误删除掉某一个表内的所有数据，Django要求在删除表内所有数据时显示使用all()。 比如，下面的操作将会出错：1</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="nx">Publisher.objects.delete</span><span class="p">()</span>
+<span class="nx">Traceback</span> <span class="p">(</span><span class="nx">most</span> <span class="nx">recent</span> <span class="nb">call</span> <span class="nb">last</span><span class="p">):</span>
+<span class="nb">File</span> <span class="s2">&quot;&lt;console&gt;&quot;</span><span class="p">,</span> <span class="nb">line</span> <span class="mi">1</span><span class="p">,</span> <span class="k">in</span> <span class="o">&lt;</span><span class="nx">module</span><span class="o">&gt;</span>
+<span class="nx">AttributeError</span><span class="p">:</span> <span class="s1">&#39;Manager&#39;</span> <span class="nb">object</span> <span class="nx">has</span> <span class="nx">no</span> <span class="nx">attribute</span> <span class="s1">&#39;delete&#39;</span>
+</pre></div>
+<section>
+<p id="comment-message">那么，你的想法呢？以上有哪些错误或不清晰的么？请在这里评论... </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="http://lotaku.github.io/django-mo-xing.html#disqus_thread">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lotaku';
+        var disqus_identifier = 'http://lotaku.github.io/django-mo-xing.html';
+    var disqus_url = 'http://lotaku.github.io/django-mo-xing.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+            <aside>
+            <hr/>
+            <nav>
+            <ul class="articles_timeline">
+ 
+                <li class="previous_article">« <a href="http://lotaku.github.io/pythonku-mysqldb.html" title="Previous: python库-MySQLdb">python库-MySQLdb</a></li>
+ 
+                <li class="next_article"><a href="http://lotaku.github.io/django-admin.html" title="Next: Django-Admin">Django-Admin</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2014-05-28T00:00:00">May 28, 2014</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#django-ref">django</a> 
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article"> 
+                <li><a href="/tags.html#django-ref">django
+                    <span>6</span>
+</a></li>
+            </ul>
+
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Lotaku</span> - 罗塔库</li>
+        <li class="elegant-license">版权声明：自由转载-非商用-非衍生-保持署名 | <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></li>
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor中文</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'lotaku';
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+        <script  language="javascript" type="text/javascript">
+            function uncollapse() {
+                var hash_str = window.location.hash;
+                if (window.location.hash.match(/^#comment-\d+$/))
+                {
+                    var hash_str = '#disqus_thread';
+                }
+                $(hash_str).collapse({
+                    toggle: true
+                    })
+            }
+        </script>
+
+        <script type="text/javascript" language="JavaScript">
+            uncollapse(); 
+        </script>
+  
+
+    </body>
+</html>

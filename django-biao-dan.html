@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lotaku" />
+        <meta name="copyright" content="Lotaku" />
+
+        <meta name="description" content="简单示例 创建一个forms.py文件，放在app的目录下，与views.py在同个目录下。当然,这个不是硬性要求。 from django import forms class ContactForm(forms.Form): subject = forms.CharField() email = forms.EmailField(required=False) message = forms.CharField() 创建一个新的对Form象，并且传入一个与定义匹配的字典类型数据：6 >>> f = ContactForm({'subject': 'Hello', 'email': 'adrian@example.com', 'message': 'Nice site!'}) 一旦你对一个Form实体赋值，你就得到了一个绑定form： >>> f.is_bound True 调用任何绑定form的is_valid()方法，就可以知道它的数据是否合法。 我们已经为每个字段传入了值 ...
+" />
+<meta name="keywords" content="django, django, " />
+        <title>Django-表单  · Lotaku
+</title>
+        <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="http://lotaku.github.io/theme/css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://lotaku.github.io/theme/css/solarizedlight.css" media="screen">
+        <link rel="shortcut icon" href="http://lotaku.github.io/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="http://lotaku.github.io/theme/images/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://lotaku.github.io/theme/images/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://lotaku.github.io/theme/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://lotaku.github.io/theme/images/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://lotaku.github.io/theme/images/apple-touch-icon-144x144.png" />
+        <link rel="icon" href="http://lotaku.github.io/theme/images/apple-touch-icon-144x144.png" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://lotaku.github.io/"><span class=site-name>Lotaku-罗塔库</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="http://lotaku.github.io">首页</a></li>
+                            <li ><a href="http://lotaku.github.io/categories.html">分类</a></li>
+                            <li ><a href="http://lotaku.github.io/tags.html">标签</a></li>
+                            <li ><a href="http://lotaku.github.io/archives.html">归档</a></li>
+
+                            <li ><a href="http://lotaku.github.io/pages/guan-yu-wo.html">关于我</a></li>
+
+                            <li><form class="navbar-search" action="http://lotaku.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page_header span10 offset2">
+    <h1><a href="http://lotaku.github.io/django-biao-dan.html"> Django-表单  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <h3 id="_1">简单示例</h3>
+<p>创建一个forms.py文件，放在app的目录下，与views.py在同个目录下。当然,这个不是硬性要求。</p>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">django</span> <span class="n">import</span> <span class="n">forms</span>
+
+<span class="n">class</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="p">.</span><span class="n">Form</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">subject</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">()</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="n">False</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">()</span>
+</pre></div>
+
+
+<p>创建一个新的对Form象，并且传入一个与定义匹配的字典类型数据：6</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">({</span><span class="err">&#39;</span><span class="n">subject</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Hello</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">email</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">adrian</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">message</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Nice</span> <span class="n">site</span><span class="o">!</span><span class="err">&#39;</span><span class="p">})</span>
+</pre></div>
+
+
+<p>一旦你对一个Form实体赋值，你就得到了一个绑定form：</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">is_bound</span>
+<span class="n">True</span>
+</pre></div>
+
+
+<p>调用任何绑定form的is_valid()方法，就可以知道它的数据是否合法。 我们已经为每个字段传入了值，因此整个Form是合法的：3</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">is_valid</span><span class="p">()</span>
+<span class="n">True</span>
+</pre></div>
+
+
+<p>每一个邦定Form实体都有一个errors属性，它为你提供了一个字段与错误消息相映射的字典表。6</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">({</span><span class="err">&#39;</span><span class="n">subject</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">Hello</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">message</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;&#39;</span><span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">errors</span>
+<span class="p">{</span><span class="err">&#39;</span><span class="n">message</span><span class="err">&#39;</span><span class="o">:</span> <span class="p">[</span><span class="n">u</span><span class="err">&#39;</span><span class="n">This</span> <span class="n">field</span> <span class="n">is</span> <span class="n">required</span><span class="p">.</span><span class="err">&#39;</span><span class="p">]}</span>
+</pre></div>
+
+
+<p>最终，如果一个Form实体的数据是合法的，它就会有一个可用的cleaned_data属性。 这是一个包含干净的提交数据的字典。 Django的form框架不但校验数据，它还会把它们转换成相应的Python类型数据，这叫做清理数据。2</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">({</span><span class="n">subject</span><span class="err">&#39;</span><span class="o">:</span> <span class="n">Hello</span><span class="p">,</span> <span class="n">email</span><span class="o">:</span> <span class="n">adrian</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="p">,</span> <span class="n">message</span><span class="o">:</span> <span class="n">Nice</span> <span class="n">site</span><span class="o">!</span><span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">is_valid</span><span class="p">()</span>
+<span class="n">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">.</span><span class="n">cleaned_data</span>
+<span class="p">{</span><span class="n">message</span><span class="err">&#39;</span><span class="o">:</span> <span class="n">uNice</span> <span class="n">site</span><span class="o">!</span><span class="p">,</span> <span class="n">email</span><span class="o">:</span> <span class="n">uadrian</span><span class="err">@</span><span class="n">example</span><span class="p">.</span><span class="n">com</span><span class="p">,</span> <span class="n">subject</span><span class="o">:</span> <span class="n">uHello</span><span class="p">}</span>
+</pre></div>
+
+
+<p>我们的contact form只涉及字符串类型，它们会被清理成Unicode对象。如果我们使用整数型或日期型，form框架会确保方法使用合适的Python整数型或datetime.date型对象。</p>
+<h3 id="_2">设置初始值</h3>
+<div class="highlight"><pre><span class="n">form</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">(</span>
+            <span class="n">initial</span><span class="o">=</span><span class="p">{</span><span class="err">&#39;</span><span class="n">subject</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">I</span> <span class="n">love</span> <span class="n">your</span> <span class="n">site</span><span class="o">!</span><span class="err">&#39;</span><span class="p">}</span>
+        <span class="p">)</span>
+</pre></div>
+
+
+<h3 id="_3">自定义校验规则</h3>
+<div class="highlight"><pre><span class="n">from</span> <span class="n">django</span> <span class="n">import</span> <span class="n">forms</span>
+
+<span class="n">class</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="p">.</span><span class="n">Form</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">subject</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="n">False</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="p">.</span><span class="n">Textarea</span><span class="p">)</span>
+
+    <span class="n">def</span> <span class="n">clean_message</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="o">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="err">&#39;</span><span class="n">message</span><span class="err">&#39;</span><span class="p">]</span>
+        <span class="n">num_words</span> <span class="o">=</span> <span class="n">len</span><span class="p">(</span><span class="n">message</span><span class="p">.</span><span class="n">split</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">num_words</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="o">:</span>
+            <span class="n">raise</span> <span class="n">forms</span><span class="p">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s">&quot;Not enough words!&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">message</span>
+</pre></div>
+
+
+<p>Django的form系统自动寻找匹配的函数方法，该方法名称以clean_开头，并以字段名称结束。 如果有这样的方法，它将在校验时被调用。</p>
+<h3 id="_4">指定标签</h3>
+<div class="highlight"><pre><span class="n">class</span> <span class="n">ContactForm</span><span class="p">(</span><span class="n">forms</span><span class="p">.</span><span class="n">Form</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">subject</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="n">False</span><span class="p">,</span> <span class="o">**</span><span class="n">label</span><span class="o">=</span><span class="err">&#39;</span><span class="n">Your</span> <span class="n">e</span><span class="o">-</span><span class="n">mail</span> <span class="n">address</span><span class="err">&#39;</span><span class="o">**</span> <span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">forms</span><span class="p">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="p">.</span><span class="n">Textarea</span><span class="p">)</span>
+</pre></div>
+<section>
+<p id="comment-message">那么，你的想法呢？以上有哪些错误或不清晰的么？请在这里评论... </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="http://lotaku.github.io/django-biao-dan.html#disqus_thread">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lotaku';
+        var disqus_identifier = 'http://lotaku.github.io/django-biao-dan.html';
+    var disqus_url = 'http://lotaku.github.io/django-biao-dan.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+            <aside>
+            <hr/>
+            <nav>
+            <ul class="articles_timeline">
+ 
+                <li class="previous_article">« <a href="http://lotaku.github.io/djangochang-yong-ming-ling.html" title="Previous: Django常用命令">Django常用命令</a></li>
+ 
+                <li class="next_article"><a href="http://lotaku.github.io/python-da-bao-fang-an-distutils.html" title="Next: Python 打包方案：distutils">Python 打包方案：distutils</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2014-05-29T00:00:00">May 29, 2014</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#django-ref">django</a> 
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article"> 
+                <li><a href="/tags.html#django-ref">django
+                    <span>6</span>
+</a></li>
+            </ul>
+
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-subtitle"><span class="site-name">Lotaku</span> - 罗塔库</li>
+        <li class="elegant-license">版权声明：自由转载-非商用-非衍生-保持署名 | <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">Creative Commons BY-NC-ND 3.0</a></li>
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor中文</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'lotaku';
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+        <script  language="javascript" type="text/javascript">
+            function uncollapse() {
+                var hash_str = window.location.hash;
+                if (window.location.hash.match(/^#comment-\d+$/))
+                {
+                    var hash_str = '#disqus_thread';
+                }
+                $(hash_str).collapse({
+                    toggle: true
+                    })
+            }
+        </script>
+
+        <script type="text/javascript" language="JavaScript">
+            uncollapse(); 
+        </script>
+  
+
+    </body>
+</html>
