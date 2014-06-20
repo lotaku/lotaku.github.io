@@ -73,16 +73,16 @@
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>
-</footer><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</footer><script src="http://lotaku.github.io/theme/js/jquery.min.js"></script>
 <script type="text/javascript" src="http://lotaku.github.io/theme/tipuesearch/tipuesearch_set.js"></script>
 <script type="text/javascript" src="http://lotaku.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
 <script>
 $(document).ready(function() {
      $('#tipue_search_input').tipuesearch({
-             'mode': 'live',
+             'mode' : 'json',
          'show': 10,
          'newWindow': true,
-             'liveDescription': '.article-content'
+             'contentLocation': 'http://lotaku.github.io/tipuesearch_content.json'
      });
 });
 </script>
