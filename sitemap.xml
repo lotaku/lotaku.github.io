@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://lotaku.github.io/index.html</loc>
-<lastmod>2014-06-20T12:15:50-00:00</lastmod>
+<lastmod>2014-06-20T12:17:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://lotaku.github.io/archives.html</loc>
-<lastmod>2014-06-20T12:15:50-00:00</lastmod>
+<lastmod>2014-06-20T12:17:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://lotaku.github.io/tags.html</loc>
-<lastmod>2014-06-20T12:15:50-00:00</lastmod>
+<lastmod>2014-06-20T12:17:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://lotaku.github.io/categories.html</loc>
-<lastmod>2014-06-20T12:15:50-00:00</lastmod>
+<lastmod>2014-06-20T12:17:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -60,7 +60,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://lotaku.github.io/pelican learn.html</loc>
+<loc>http://lotaku.github.io/pelican-learn.html</loc>
 <lastmod>2014-06-10T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
