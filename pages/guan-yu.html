@@ -6,9 +6,9 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
-        <meta name="description" content="Search results for Lotaku blog.
+        <meta name="description" content="Lotaku - 罗塔库 pythoner，vimer, Linux中度用户 在潮汕一个普通的农村家庭长大，接触电脑比较晚,认识互联网就更晚了,但还是在一开始的时候就爱上了这个网络世界，没有人教导，只能自己摸索。 现这样吧。 邮件：qq317399510#gmail.com github:https://github.com/lotaku
 " />
-        <title>Search · Lotaku
+        <title>关于  · Lotaku
 </title>
         <!--<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"> -->
 
@@ -19,9 +19,6 @@
 
         <link rel="stylesheet" type="text/css" href="http://lotaku.github.io/theme/css/style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="http://lotaku.github.io/theme/css/solarizedlight.css" media="screen">
-
-<link href="http://lotaku.github.io/theme/css/fontsGoogleapisCom.css?family=Lato:300,400|Open+Sans:300,400" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="http://lotaku.github.io/theme/tipuesearch/tipuesearch.css">
         <link rel="shortcut icon" href="http://lotaku.github.io/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="http://lotaku.github.io/theme/images/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="57x57" href="http://lotaku.github.io/theme/images/apple-touch-icon-57x57.png" />
@@ -48,7 +45,7 @@
                             <li ><a href="http://lotaku.github.io/tags.html">标签</a></li>
                             <li ><a href="http://lotaku.github.io/archives.html">归档</a></li>
 
-                            <li ><a href="http://lotaku.github.io/pages/guan-yu.html">关于</a></li>
+                            <li  class="active"><a href="http://lotaku.github.io/pages/guan-yu.html">关于</a></li>
 
                             <li><form class="navbar-search" action="http://lotaku.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
                         </ul>
@@ -61,10 +58,32 @@
                 <div class="span1"></div>
                 <div class="span10">
 <article>
-    <div class="span8 offset2">
-        <div id="tipue_search_content"><div id="tipue_search_loading"></div></div>
+<div class="row-fluid">
+    <header class="page_header span10 offset2">
+    <h1><a href="http://lotaku.github.io/pages/guan-yu.html"> 关于  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <p>Lotaku - 罗塔库</p>
+<p>pythoner，vimer, Linux中度用户</p>
+<p>在潮汕一个普通的农村家庭长大，接触电脑比较晚,认识互联网就更晚了,但还是在一开始的时候就爱上了这个网络世界，没有人教导，只能自己摸索。 </p>
+<p>现这样吧。</p>
+<p>邮件：qq317399510#gmail.com</p>
+<p>github:https://github.com/lotaku</p>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2013-01-14T00:00:00">Jan 14, 2013</time>
+      
+        </div>
+        </section>
     </div>
-</article>
+    </article>
                 </div>
                 <div class="span1"></div>
             </div>
@@ -78,19 +97,15 @@
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>
-</footer><script src="http://lotaku.github.io/theme/js/jquery.min.js"></script>
-<script type="text/javascript" src="http://lotaku.github.io/theme/tipuesearch/tipuesearch_set.js"></script>
-<script type="text/javascript" src="http://lotaku.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
-<script>
-$(document).ready(function() {
-     $('#tipue_search_input').tipuesearch({
-             'mode' : 'json',
-         'show': 10,
-         'newWindow': true,
-             'contentLocation': 'http://lotaku.github.io/tipuesearch_content.json'
-     });
-});
-</script>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
   
 
     </body>
