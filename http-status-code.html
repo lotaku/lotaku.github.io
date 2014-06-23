@@ -6,10 +6,10 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
-        <meta name="description" content="git在线电子书学习项目等
+        <meta name="description" content="一、什么是HTTP Status Code 客户机与服务器建立连接后，发送一个请求给服务器（如：Get /index.html http/1.1），在服务器接到请求后，给予客户机相应的响应信息，包括该信息的协议版本号、HTTP协议状态码、服务器信息、实体信息、内容等（如：http/1.1 200 ok）。在通讯时，客户端发出连接请求，服务器端建立连接，客户端发出HTTP请求，服务器端返回响应信息，由此完成一个HTTP操作。 二、HTTP Status Code的意思 1XX 都表示临时响应，客户端在收到常规响应前，会接受一个或多个1XX响应 100 继续 101 切换协议 2XX 表示服务器端成功接受客户端请求 200服务器成功处理请求 201 已创建 202 ...
 " />
-<meta name="keywords" content="git, 教程, 默认分类, " />
-        <title>待学习的项目  · Lotaku
+<meta name="keywords" content="pelican, other, " />
+        <title>HTTP Status Code的一些总结  · Lotaku
 </title>
         <!--<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"> -->
 
@@ -61,23 +61,70 @@
 <article>
 <div class="row-fluid">
     <header class="page_header span10 offset2">
-    <h1><a href="http://lotaku.github.io/git.html"> 待学习的项目  </a></h1>
+    <h1><a href="http://lotaku.github.io/http-status-code.html"> HTTP Status Code的一些总结  </a></h1>
     </header>
 </div>
 
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
 
-            <ul>
-<li>git在线电子书学习项目：https://www.gitbook.io/book/lvwzhen/git-tutorial</li>
-</ul>
+            <h3 id="http-status-code">一、什么是HTTP Status Code</h3>
+<p>客户机与服务器建立连接后，发送一个请求给服务器（如：Get /index.html http/1.1），在服务器接到请求后，给予客户机相应的响应信息，包括该信息的协议版本号、HTTP协议状态码、服务器信息、实体信息、内容等（如：http/1.1 200 ok）。在通讯时，客户端发出连接请求，服务器端建立连接，客户端发出HTTP请求，服务器端返回响应信息，由此完成一个HTTP操作。 </p>
+<h3 id="http-status-code_1">二、HTTP Status Code的意思</h3>
+<p>1XX 都表示临时响应，客户端在收到常规响应前，会接受一个或多个1XX响应
+<em> 100 继续 
+</em> 101 切换协议</p>
+<p>2XX 表示服务器端成功接受客户端请求  
+<em> 200服务器成功处理请求  
+</em> 201 已创建  
+<em> 202 已接受  
+</em> 203 非权威性信息  
+<em> 204 无内容  
+</em> 205 重置内容  
+* 206 部分内容 </p>
+<p>3XX 表示重定向，客户端必须采取更多操作来实现请求  
+<em> 300 多种选择  
+</em> 301 永久重定向  
+<em> 302 对象临时移走  
+</em> 303 查看其他位置  
+<em> 304 未修改  
+</em> 305 使用代理  
+* 307 临时重定向 </p>
+<p>4XX 表示客户端的请求有错误  
+<em> 400 请求错误，服务器端不理解客户端的请求  
+</em> 401 验证失败  
+<em> 403 服务器拒绝访问  
+</em> 404 服务器找不到请求的网页  
+<em> 405 方法禁用  
+</em> 406 客户端浏览器不接受所请求页面的MIME类型  
+<em> 407 需要代理授权  
+</em> 408 请求超时  
+<em> 409 服务器完成请求时冲突  
+</em> 410 资源已永久删除  
+<em> 411 需要有效长度  
+</em> 412 未满足前提条件 
+<em> 413 请求实体过大
+</em> 414 请求的URL过长  
+<em> 415 不支持的媒体类型  
+</em> 416 请求范围不合要求  
+* 417 执行失败 </p>
+<p>5XX 表示服务器遇到错误无法完成客户端请求  
+<em> 500 内部服务器错误  
+</em> 501 服务器不支持的请求  
+<em> 502 网关错误  
+</em> 503 服务不可用（一般是临时性的）  
+<em> 504 网关超时  
+</em> 505 HTTP版本不支持 </p>
+<h3 id="_1">三、一些实际体会</h3>
+<p>在实际应用中，经常会碰到的协议状态码主要包括200、301、302、401、403、404、408、413、414、500、503、504这些，了解了这些代码所对应的意义，以及出现这些代码所意味的服务器或客户端的一些问题，以及常见问题的解决方法，工作起来效率会提高很多。 </p>
+<p>转载：<a href="http://wenku.baidu.com/link?url=COTlR_C4tL44Mh6fYiz4VTyzeX6NPPNL7w527WokkLka7CfopdTQcmEcf8H3NwPafH1QudMVlTGwJcz7Vs5JjonwrS7uuzeA04EA9DPLlxm">百度文库</a></p>
 <section>
 <p id="comment-message">那么，你的想法呢？以上有哪些错误或不清晰的么？请在这里评论... </p>
 <div class="accordion" id="accordion2">
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://lotaku.github.io/git.html#disqus_thread">
+                href="http://lotaku.github.io/http-status-code.html#disqus_thread">
                 Comments
             </a>
         </div>
@@ -87,8 +134,8 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'lotaku';
-        var disqus_identifier = 'http://lotaku.github.io/git.html';
-    var disqus_url = 'http://lotaku.github.io/git.html';
+        var disqus_identifier = 'http://lotaku.github.io/http-status-code.html';
+    var disqus_url = 'http://lotaku.github.io/http-status-code.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -108,9 +155,7 @@
             <nav>
             <ul class="articles_timeline">
  
-                <li class="previous_article">« <a href="http://lotaku.github.io/git-question-answer.html" title="Previous: git 问题记录及解决方法">git 问题记录及解决方法</a></li>
- 
-                <li class="next_article"><a href="http://lotaku.github.io/http-status-code.html" title="Next: HTTP Status Code的一些总结">HTTP Status Code的一些总结</a> »</li>
+                <li class="previous_article">« <a href="http://lotaku.github.io/git.html" title="Previous: 待学习的项目">待学习的项目</a></li>
             </ul>
             </nav>
             </aside>
@@ -119,16 +164,13 @@
         <div class="span2" style="float:right;font-size:0.9em;">
  
             <h4>发布时间</h4>
-            <time pubdate="pubdate" datetime="2014-06-11T00:00:00">Jun 11, 2014</time>
+            <time pubdate="pubdate" datetime="2014-06-23T00:00:00">Jun 23, 2014</time>
             <h4>文章分类</h4>
-            <a class="category-link" href="/categories.html#默认分类-ref">默认分类</a> 
+            <a class="category-link" href="/categories.html#other-ref">other</a> 
             <h4>文章标签</h4>
             <ul class="list-of-tags tags-in-article"> 
-                <li><a href="/tags.html#git-ref">git
+                <li><a href="/tags.html#pelican-ref">pelican
                     <span>2</span>
-</a></li>
-                <li><a href="/tags.html#教程-ref">教程
-                    <span>1</span>
 </a></li>
             </ul>
 
