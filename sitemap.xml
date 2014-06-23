@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://lotaku.github.io/index.html</loc>
-<lastmod>2014-06-23T18:37:17-00:00</lastmod>
+<lastmod>2014-06-23T18:50:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://lotaku.github.io/archives.html</loc>
-<lastmod>2014-06-23T18:37:17-00:00</lastmod>
+<lastmod>2014-06-23T18:50:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://lotaku.github.io/tags.html</loc>
-<lastmod>2014-06-23T18:37:17-00:00</lastmod>
+<lastmod>2014-06-23T18:50:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://lotaku.github.io/categories.html</loc>
-<lastmod>2014-06-23T18:37:17-00:00</lastmod>
+<lastmod>2014-06-23T18:50:12-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -46,14 +46,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://lotaku.github.io/git.html</loc>
+<loc>http://lotaku.github.io/git-question-answer.html</loc>
 <lastmod>2014-06-11T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 
 <url>
-<loc>http://lotaku.github.io/git-question-answer.html</loc>
+<loc>http://lotaku.github.io/to-do-list.html</loc>
 <lastmod>2014-06-11T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
@@ -221,6 +221,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://lotaku.github.io/tag/to-do-list.html</loc>
+<lastmod>2014-06-11T00:00:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://lotaku.github.io/tag/mysql.html</loc>
 <lastmod>2014-05-28T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
@@ -258,13 +265,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://lotaku.github.io/tag/pythonda-bao.html</loc>
 <lastmod>2014-06-10T00:00:00-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://lotaku.github.io/tag/jiao-cheng.html</loc>
-<lastmod>2014-06-11T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
