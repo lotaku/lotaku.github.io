@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Lotaku</title><link href="http://lotaku.github.io/" rel="alternate"></link><link href="http://lotaku.github.io/feeds/linux.atom.xml" rel="self"></link><id>http://lotaku.github.io/</id><updated>2014-05-29T00:00:00+02:00</updated><entry><title>Linux常用命令</title><link href="http://lotaku.github.io/linuxchang-yong-ming-ling.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:lotaku.github.io,2014-05-29:linuxchang-yong-ming-ling.html</id><summary type="html">&lt;p&gt;查看CPU温度:&lt;code&gt;sensors&lt;/code&gt; &lt;br /&gt;
-=======
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Lotaku</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/linux.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2014-05-29T00:00:00+02:00</updated><entry><title>Linux常用命令</title><link href="http://127.0.0.1:8000/linuxchang-yong-ming-ling.html" rel="alternate"></link><updated>2014-05-29T00:00:00+02:00</updated><author><name>Lotaku</name></author><id>tag:127.0.0.1:8000,2014-05-29:linuxchang-yong-ming-ling.html</id><summary type="html">&lt;p&gt;查看CPU温度:&lt;code&gt;sensors&lt;/code&gt; &lt;br /&gt;
->>>>>>> 6ae471093c358ad56f546c5d7b1228d62a480593
-查看占8000端口的程序：&lt;code&gt;lsof -i:8000&lt;/code&gt;   &lt;/p&gt;</summary><category term="linux"></category></entry></feed>
