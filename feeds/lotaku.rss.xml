@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotaku</title><link>http://lotaku.github.io/</link><description>罗塔库</description><atom:link href="http://lotaku.github.io/feeds/lotaku.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 23 Jun 2014 00:00:00 +0200</lastBuildDate><item><title>HTTP Status Code的一些总结</title><link>http://lotaku.github.io/http-status-code.html</link><description>&lt;h3 id="http-status-code"&gt;一、什么是HTTP Status Code&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lotaku</title><link>http://lotaku.github.io/</link><description>罗塔库</description><atom:link href="http://lotaku.github.io/feeds/lotaku.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 10 Sep 2014 00:00:00 +0200</lastBuildDate><item><title>PostgreSQL</title><link>http://lotaku.github.io/postgresql.html</link><description>&lt;h3 id="user"&gt;user 用户&lt;/h3&gt;
+&lt;p&gt;切换linux用户为&lt;code&gt;postgres&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;su&lt;/span&gt; &lt;span class="n"&gt;postgres&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;============&lt;/p&gt;
+&lt;p&gt;修改 数据库用户 密码&lt;/p&gt;
+&lt;p&gt;sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"&lt;/p&gt;
+&lt;p&gt;====&lt;/p&gt;
+&lt;p&gt;sudo -u postgres psql&lt;/p&gt;
+&lt;p&gt;======创建16ss用户&lt;/p&gt;
+&lt;p&gt;su root&lt;/p&gt;
+&lt;p&gt;su postgres
+createuser 16ss&lt;/p&gt;
+&lt;p&gt;=======删除用户===&lt;/p&gt;
+&lt;p&gt;sudo userdel xxx&lt;/p&gt;
+&lt;p&gt;参考：http://stackoverflow.com/questions/7695962/postgresql-password-authentication-failed-for-user-postgres&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Lotaku</dc:creator><pubDate>Wed, 10 Sep 2014 00:00:00 +0200</pubDate><guid>tag:lotaku.github.io,2014-09-10:postgresql.html</guid><category>数据库</category></item><item><title>HTTP Status Code的一些总结</title><link>http://lotaku.github.io/http-status-code.html</link><description>&lt;h3 id="http-status-code"&gt;一、什么是HTTP Status Code&lt;/h3&gt;
 &lt;p&gt;客户机与服务器建立连接后，发送一个请求给服务器（如：Get /index.html http/1.1），在服务器接到请求后，给予客户机相应的响应信息，包括该信息的协议版本号、HTTP协议状态码、服务器信息、实体信息、内容等（如：http/1.1 200 ok）。在通讯时，客户端发出连接请求，服务器端建立连接，客户端发出HTTP请求，服务器端返回响应信息，由此完成一个HTTP操作。 &lt;/p&gt;
 &lt;h3 id="http-status-code_1"&gt;二、HTTP Status Code的意思&lt;/h3&gt;
 &lt;p&gt;1XX 都表示临时响应，客户端在收到常规响应前，会接受一个或多个1XX响应&lt;/p&gt;

@@ -6,8 +6,10 @@
         <meta name="author" content="Lotaku" />
         <meta name="copyright" content="Lotaku" />
 
-        <meta name="description" content="SITE_DESCRIPTION" />
-        <title>Lotaku
+        <meta name="description" content="PostgreSQL 常用命令
+" />
+<meta name="keywords" content="数据库, 默认分类, " />
+        <title>PostgreSQL  - 常用命令  · Lotaku
 </title>
         <!--<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css"> -->
 
@@ -39,7 +41,7 @@
                     <a class="brand" href="http://lotaku.github.io/"><span class=site-name>Lotaku-罗塔库</span></a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right top-menu">
-                            <li  class="active"><a href="http://lotaku.github.io">首页</a></li>
+                            <li ><a href="http://lotaku.github.io">首页</a></li>
                             <li ><a href="http://lotaku.github.io/categories.html">分类</a></li>
                             <li ><a href="http://lotaku.github.io/tags.html">标签</a></li>
                             <li ><a href="http://lotaku.github.io/archives.html">归档</a></li>
@@ -56,75 +58,94 @@
             <div class="row-fluid">
                 <div class="span1"></div>
                 <div class="span10">
+<article>
 <div class="row-fluid">
-    <header class="page_header span12">
-    <h1><a href="http://lotaku.github.io">Pyhoner，vimer</a></h1>
+    <header class="page_header span10 offset2">
+    <h1><a href="http://lotaku.github.io/postgresql.html"> PostgreSQL  <small> 常用命令 </small>  </a></h1>
     </header>
+</div>
 
-    <div class="row-fluid">
-        <div class="span8">
-            <header>
-            <h1 id="about-me">关于我</h1>
-            </header>
-            <div class="article-content">
-                <span style='color:#800000;' >求职意向</span>：python服务器端游戏开发</br><span style='color:#800000;' >相关项目</span>：<a href='https://github.com/lotaku/skills'>C/S TCP网络+Select</a>，托管于github。</br><span style='color:#800000;' >工作经验</span>：应届毕业生(本科)</br><span style='color:#800000;' >毕业学校</span>：广东培正学院</br>
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <h3 id="user">user 用户</h3>
+<p>切换linux用户为<code>postgres</code></p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">su</span> <span class="n">postgres</span>
+</pre></div>
+
+
+<p>============</p>
+<p>修改 数据库用户 密码</p>
+<p>sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"</p>
+<p>====</p>
+<p>sudo -u postgres psql</p>
+<p>======创建16ss用户</p>
+<p>su root</p>
+<p>su postgres
+createuser 16ss</p>
+<p>=======删除用户===</p>
+<p>sudo userdel xxx</p>
+<p>参考：http://stackoverflow.com/questions/7695962/postgresql-password-authentication-failed-for-user-postgres</p>
+<section>
+<p id="comment-message">那么，你的想法呢？以上有哪些错误或不清晰的么？请在这里评论... </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="http://lotaku.github.io/postgresql.html#disqus_thread">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'lotaku';
+        var disqus_identifier = 'http://lotaku.github.io/postgresql.html';
+    var disqus_url = 'http://lotaku.github.io/postgresql.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>                </div>
             </div>
-        </div>
-
-        <div class="span4">
-            <header>
-            <h1 id="my-projects">我的项目</h1>
-            <ul class="list-all-articles">
-                <li>
-                <a href="https://github.com/lotaku/skills" title="C/S TCP网络通讯 + Select">C/S TCP网络通讯 + Select</a> <span class="proj_desc">用select实现 I/O 的简单复用;编写packet类实现压包、解包,server上创建client_socket包类,编写client管理类和...</span>
-                </li>
-            </ul>
-            <ul class="list-all-articles">
-                <li>
-                <a href="https://github.com/lotaku/skills/tree/master/ADs-system-php" title="广告系统的设计与实现">广告系统的设计与实现</a> <span class="proj_desc">涉及PHP，MySQL，DIV+CSS布局，实现功能：广告位的申请;管理员审核;会员注册;广告效果统计...</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="row-fluid">
-        <div class="span12">
-            <header>
-            <h1 id="recent-posts">最新文章 <a id="allposts" href="http://lotaku.github.io/archives.html">所有文章</a></h1>
-            </header>
-            <ul class="list-all-articles">
-                <li>
-                <a href="http://lotaku.github.io/postgresql.html">PostgreSQL  <small> 常用命令 </small>  </a> 
-                <time pubdate="pubdate" datetime="2014-09-10T00:00:00">三 10 九月 2014</time>
-                </li>
-            </ul>
-            <ul class="list-all-articles">
-                <li>
-                <a href="http://lotaku.github.io/http-status-code.html">HTTP Status Code的一些总结  </a> 
-                <time pubdate="pubdate" datetime="2014-06-23T00:00:00">一 23 六月 2014</time>
-                </li>
-            </ul>
-            <ul class="list-all-articles">
-                <li>
-                <a href="http://lotaku.github.io/git-question-answer.html">git 问题记录及解决方法  </a> 
-                <time pubdate="pubdate" datetime="2014-06-11T00:00:00">三 11 六月 2014</time>
-                </li>
-            </ul>
-            <ul class="list-all-articles">
-                <li>
-                <a href="http://lotaku.github.io/to-do-list.html">To Do List  </a> 
-                <time pubdate="pubdate" datetime="2014-06-11T00:00:00">三 11 六月 2014</time>
-                </li>
-            </ul>
-            <ul class="list-all-articles">
-                <li>
-                <a href="http://lotaku.github.io/bo-wen-shu-xie-yu-yan-markdown.html">博文书写语言-Markdown  </a> 
-                <time pubdate="pubdate" datetime="2014-06-10T00:00:00">二 10 六月 2014</time>
-                </li>
-            </ul>
         </div>
     </div>
 </div>
+</section>
+            <aside>
+            <hr/>
+            <nav>
+            <ul class="articles_timeline">
+ 
+                <li class="previous_article">« <a href="http://lotaku.github.io/http-status-code.html" title="Previous: HTTP Status Code的一些总结">HTTP Status Code的一些总结</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+ 
+            <h4>发布时间</h4>
+            <time pubdate="pubdate" datetime="2014-09-10T00:00:00"> 9月 10, 2014</time>
+            <h4>文章分类</h4>
+            <a class="category-link" href="/categories.html#默认分类-ref">默认分类</a> 
+            <h4>文章标签</h4>
+            <ul class="list-of-tags tags-in-article"> 
+                <li><a href="/tags.html#数据库-ref">数据库
+                    <span>1</span>
+</a></li>
+            </ul>
+
+        </div>
+        </section>
+</div>
+</article>
                 </div>
                 <div class="span1"></div>
             </div>
@@ -138,13 +159,40 @@
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>
-</footer>        <script src="http://code.jquery.com/jquery.min.js"></script>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
         <script>
             function validateForm(query)
             {
                 return (query.length > 0);
             }
+        </script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'lotaku';
+
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+        <script  language="javascript" type="text/javascript">
+            function uncollapse() {
+                var hash_str = window.location.hash;
+                if (window.location.hash.match(/^#comment-\d+$/))
+                {
+                    var hash_str = '#disqus_thread';
+                }
+                $(hash_str).collapse({
+                    toggle: true
+                    })
+            }
+        </script>
+
+        <script type="text/javascript" language="JavaScript">
+            uncollapse(); 
         </script>
   
 
