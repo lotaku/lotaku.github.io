@@ -51,6 +51,7 @@ STATIC_PATHS = [
     # 'pictures',
     # 'extra/robots.txt',
     'static',
+    'extra/CNAME',
 ]
 
 ARTICLE_URL = 'blog/{slug}.html'
@@ -70,3 +71,5 @@ AUTHOR_SAVE_AS = 'author/{slug}.html'
 # YEAR_ARCHIVE_SAVE_AS = ''
 # MONTH_ARCHIVE_SAVE_AS = ''
 # DAY_ARCHIVE_SAVE_AS = ''
+
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, }
