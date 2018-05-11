@@ -105,3 +105,10 @@ def gh_pages():
     rebuild()
     local("ghp-import -b {github_pages_branch} {deploy_path} -p".format(**env))
     # local("ghp-import -r git@github.com:lotaku/lotaku.github.io.git -b master {deploy_path} -p".format(**env))
+
+
+def pelican():
+    """
+    Publish to pelican branch
+    """
+    local("git add . && git commit -m 'update' && git push")
