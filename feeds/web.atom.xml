@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog - web</title><link href="/" rel="alternate"></link><link href="/feeds/web.atom.xml" rel="self"></link><id>/</id><updated>2014-06-23T10:20:00+00:00</updated><entry><title>HTTP Status Code</title><link href="/http-status-code.html" rel="alternate"></link><published>2014-06-23T10:20:00+00:00</published><updated>2014-06-23T10:20:00+00:00</updated><author><name></name></author><id>tag:None,2014-06-23:/http-status-code.html</id><summary type="html">&lt;h3&gt;一、什么是HTTP Status Code&lt;/h3&gt;
+&lt;p&gt;客户机与服务器建立连接后，发送一个请求给服务器（如：Get /index.html http/1.1），在服务器接到请求后，给予客户机相应的响应信息，包括该信息的协议版本号、HTTP协议状态码、服务器信息、实体信息、内容等（如：http/1.1 200 ok）。在通讯时，客户端发出连接请求，服务器端建立连接，客户端发出HTTP请求，服务器端返回响应信息，由此完成一个HTTP操作。 &lt;/p&gt;
+&lt;h3&gt;二、HTTP Status Code的意思&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#1XX 都表示临时响应，客户端在收到常规响应前，会接受一个或多个1XX响应&lt;/span&gt;
+
+&lt;span class="m"&gt;100&lt;/span&gt; 继续
+&lt;span class="m"&gt;101&lt;/span&gt; 切换协议
+
+&lt;span class="c1"&gt;#2XX 表示服务器端成功接受客户端请求&lt;/span&gt;
+
+&lt;span class="m"&gt;200&lt;/span&gt;服务器成功处理请求  
+&lt;span class="m"&gt;201&lt;/span&gt; 已创建 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;一、什么是HTTP Status Code&lt;/h3&gt;
+&lt;p&gt;客户机与服务器建立连接后，发送一个请求给服务器（如：Get /index.html http/1.1），在服务器接到请求后，给予客户机相应的响应信息，包括该信息的协议版本号、HTTP协议状态码、服务器信息、实体信息、内容等（如：http/1.1 200 ok）。在通讯时，客户端发出连接请求，服务器端建立连接，客户端发出HTTP请求，服务器端返回响应信息，由此完成一个HTTP操作。 &lt;/p&gt;
+&lt;h3&gt;二、HTTP Status Code的意思&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#1XX 都表示临时响应，客户端在收到常规响应前，会接受一个或多个1XX响应&lt;/span&gt;
+
+&lt;span class="m"&gt;100&lt;/span&gt; 继续
+&lt;span class="m"&gt;101&lt;/span&gt; 切换协议
+
+&lt;span class="c1"&gt;#2XX 表示服务器端成功接受客户端请求&lt;/span&gt;
+
+&lt;span class="m"&gt;200&lt;/span&gt;服务器成功处理请求  
+&lt;span class="m"&gt;201&lt;/span&gt; 已创建  
+&lt;span class="m"&gt;202&lt;/span&gt; 已接受  
+&lt;span class="m"&gt;203&lt;/span&gt; 非权威性信息  
+&lt;span class="m"&gt;204&lt;/span&gt; 无内容  
+&lt;span class="m"&gt;205&lt;/span&gt; 重置内容  
+&lt;span class="m"&gt;206&lt;/span&gt; 部分内容 
+
+&lt;span class="c1"&gt;#3XX 表示重定向，客户端必须采取更多操作来实现请求&lt;/span&gt;
+
+&lt;span class="m"&gt;300&lt;/span&gt; 多种选择  
+&lt;span class="m"&gt;301&lt;/span&gt; 永久重定向  
+&lt;span class="m"&gt;302&lt;/span&gt; 对象临时移走  
+&lt;span class="m"&gt;303&lt;/span&gt; 查看其他位置  
+&lt;span class="m"&gt;304&lt;/span&gt; 未修改  
+&lt;span class="m"&gt;305&lt;/span&gt; 使用代理  
+&lt;span class="m"&gt;307&lt;/span&gt; 临时重定向 
+
+&lt;span class="c1"&gt;#4XX 表示客户端的请求有错误&lt;/span&gt;
+
+&lt;span class="m"&gt;400&lt;/span&gt; 请求错误，服务器端不理解客户端的请求  
+&lt;span class="m"&gt;401&lt;/span&gt; 验证失败  
+&lt;span class="m"&gt;403&lt;/span&gt; 服务器拒绝访问  
+&lt;span class="m"&gt;404&lt;/span&gt; 服务器找不到请求的网页  
+&lt;span class="m"&gt;405&lt;/span&gt; 方法禁用  
+&lt;span class="m"&gt;406&lt;/span&gt; 客户端浏览器不接受所请求页面的MIME类型  
+&lt;span class="m"&gt;407&lt;/span&gt; 需要代理授权  
+&lt;span class="m"&gt;408&lt;/span&gt; 请求超时  
+&lt;span class="m"&gt;409&lt;/span&gt; 服务器完成请求时冲突  
+&lt;span class="m"&gt;410&lt;/span&gt; 资源已永久删除  
+&lt;span class="m"&gt;411&lt;/span&gt; 需要有效长度  
+&lt;span class="m"&gt;412&lt;/span&gt; 未满足前提条件 
+&lt;span class="m"&gt;413&lt;/span&gt; 请求实体过大
+&lt;span class="m"&gt;414&lt;/span&gt; 请求的URL过长  
+&lt;span class="m"&gt;415&lt;/span&gt; 不支持的媒体类型  
+&lt;span class="m"&gt;416&lt;/span&gt; 请求范围不合要求  
+&lt;span class="m"&gt;417&lt;/span&gt; 执行失败 
+
+&lt;span class="c1"&gt;#5XX 表示服务器遇到错误无法完成客户端请求&lt;/span&gt;
+
+&lt;span class="m"&gt;500&lt;/span&gt; 内部服务器错误  
+&lt;span class="m"&gt;501&lt;/span&gt; 服务器不支持的请求  
+&lt;span class="m"&gt;502&lt;/span&gt; 网关错误  
+&lt;span class="m"&gt;503&lt;/span&gt; 服务不可用（一般是临时性的）  
+&lt;span class="m"&gt;504&lt;/span&gt; 网关超时  
+&lt;span class="m"&gt;505&lt;/span&gt; HTTP版本不支持
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;三、一些实际体会
+在实际应用中，经常会碰到的协议状态码主要包括200、301、302、401、403、404、408、413、414、500、503、504这些，了解了这些代码所对应的意义，以及出现这些代码所意味的服务器或客户端的一些问题，以及常见问题的解决方法，工作起来效率会提高很多。 &lt;/p&gt;</content><category term="web"></category></entry></feed>

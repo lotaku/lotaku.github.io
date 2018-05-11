@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog - Tools</title><link href="/" rel="alternate"></link><link href="/feeds/tools.atom.xml" rel="self"></link><id>/</id><updated>2014-10-06T10:20:00+00:00</updated><entry><title>Pelican 学习笔记</title><link href="/pelican-learn.html" rel="alternate"></link><published>2014-10-06T10:20:00+00:00</published><updated>2014-10-06T10:20:00+00:00</updated><author><name></name></author><id>tag:None,2014-10-06:/pelican-learn.html</id><summary type="html">&lt;h3&gt;学习材料&lt;/h3&gt;
+&lt;p&gt;官方文档：http://docs.getpelican.com/en/3.3.0/&lt;/p&gt;
+&lt;h3&gt;介绍&lt;/h3&gt;
+&lt;p&gt;可以在github上搭建一个全静态化的博客网站.&lt;/p&gt;
+&lt;h3&gt;安装等准备工作&lt;/h3&gt;
+&lt;p&gt;http://docs.getpelican.com/en/3.3.0/getting_started.html&lt;/p&gt;
+&lt;h3&gt;pelican theme tool&lt;/h3&gt;
+&lt;p&gt;http://docs.getpelican.com/en/3.3.0/pelican-themes.html&lt;/p&gt;
+&lt;h3&gt;开启/停止本地web服务器：&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;myblogst&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cd ~/app/myblog/ &amp;amp;&amp;amp;./develop_server.sh start&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;myblogsp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cd ~/app …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h3&gt;学习材料&lt;/h3&gt;
+&lt;p&gt;官方文档：http://docs.getpelican.com/en/3.3.0/&lt;/p&gt;
+&lt;h3&gt;介绍&lt;/h3&gt;
+&lt;p&gt;可以在github上搭建一个全静态化的博客网站.&lt;/p&gt;
+&lt;h3&gt;安装等准备工作&lt;/h3&gt;
+&lt;p&gt;http://docs.getpelican.com/en/3.3.0/getting_started.html&lt;/p&gt;
+&lt;h3&gt;pelican theme tool&lt;/h3&gt;
+&lt;p&gt;http://docs.getpelican.com/en/3.3.0/pelican-themes.html&lt;/p&gt;
+&lt;h3&gt;开启/停止本地web服务器：&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;myblogst&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cd ~/app/myblog/ &amp;amp;&amp;amp;./develop_server.sh start&amp;#39;&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;myblogsp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cd ~/app/myblog/ &amp;amp;&amp;amp;./develop_server.sh stop&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;创建一个新的博客项目：&lt;/p&gt;
+&lt;h3&gt;进入新建的目录，比如myblog目录&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;$pelican&lt;/span&gt;-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;同步网站：(同步方法在执行pelican命令时可选)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make rsync_upload
+其他命令：
+升级pelican：$ pip install --upgrade pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;网站配置文件：pelicanconf.py&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;不使用content文件夹下的子目录做分类标志：USE_FOLDER_AS_CATEGORY&lt;span class="o"&gt;=&lt;/span&gt;False
+文章摘要长度：SUMMARY_MAX_LENGTH
+设置提取文件名元数据的正则表达式：FILENAME_METADATA
+是否在主目录显示page：DISPLAY_PAGES_ON_MENU
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;工具&lt;/h3&gt;
+&lt;p&gt;Fabric :对一些pelican命令的封装 方便使用（我再也不用使用./bashrc的别名来执行pelican的命令，虽然还是很好用的）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fab安装：pip install Fabric
+fab常用命令：
+生成网站：fab build
+重新生成网站：fab regenerate
+启动web服务器：fab serve
+开启ssh:fab publish
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Make:也是一些pelican命令的封装&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;生成网站：make html
+重新生成网站：make regenerate
+启动web服务器：make serve
+重新生成网站并且再次启动web服务器：make devserver
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;设置评论：disqus&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;注册并登录 http://disqus.com/&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加新的网站&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Site name ：&lt;span class="o"&gt;{&lt;/span&gt;任意名字&lt;span class="o"&gt;}&lt;/span&gt;
+Choose your unique Disqus URL: &lt;span class="o"&gt;{&lt;/span&gt;lotaku&lt;span class="o"&gt;}&lt;/span&gt;.disqus.com
+&lt;span class="c1"&gt;#lotaku是短域名，要记住的！在pelicanconf.py的配置中要用到。&lt;/span&gt;
+进入Admin &amp;gt; Settings &amp;gt; Advanced,将以下域名添加到 Trusted Domains
+
+lotaku.github.io &lt;span class="c1"&gt;#我的博客域名&lt;/span&gt;
+&lt;span class="m"&gt;127&lt;/span&gt;.0.0.1        &lt;span class="c1"&gt;#本地调试域名&lt;/span&gt;
+localhost        &lt;span class="c1"&gt;#本地调试域名&lt;/span&gt;
+打开博客项目根目录下的配置文件
+
+&lt;span class="c1"&gt;#pelicanconf.py 添加:&lt;/span&gt;
+&lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://lotaku.github.io&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;#如果要在本地调试测试显示disqus,修改SITEURL&lt;/span&gt;
+&lt;span class="c1"&gt;#SITEURL = &amp;#39;http://127.0.0.1:8000&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;u&lt;span class="s1"&gt;&amp;#39;/home/l/app/myblog3/mytheme/pelican-elegant-1.3&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;DISQUS_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; u&lt;span class="s1"&gt;&amp;#39;lotaku&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;主题设置&lt;/h3&gt;
+&lt;p&gt;使用中的主题：&lt;a href="http://oncrashreboot.com/elegant-best-pelican-theme-features"&gt;pelican-elegant-1.3&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;使用记录&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#在pelicanconf.py 中添加,以下代码，主题的搜索等功能需要&lt;/span&gt;
+
+&lt;span class="nv"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sitemap&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;extract_toc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;tipue_search&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="nv"&gt;MD_EXTENSIONS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;codehilite(css_class=highlight)&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;extra&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;headerid&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;toc&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="nv"&gt;DIRECT_TEMPLATES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;tags&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;categories&amp;#39;&lt;/span&gt;,&lt;span class="s1"&gt;&amp;#39;archives&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;search&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;404&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+&lt;span class="nv"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;theme/images&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="nv"&gt;TAG_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;CATEGORY_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="nv"&gt;AUTHOR_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;备份整个博客&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;myblogbackup_to_dropbox&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cp -r ~/app/myblog/* ~/Dropbox/myblog/&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry></feed>
