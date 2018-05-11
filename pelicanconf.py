@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
@@ -6,7 +5,7 @@ AUTHOR = u'Lotaku'
 SITENAME = u'Lotaku'
 SITEURL = 'http://lotaku.github.io'
 # 如果要在本地调试测试显示disqus,修改SITEURL
-# SITEURL = 'http://127.0.0.1:8000'
+SITEURL = 'http://127.0.0.1:8000'
 DISQUS_SITENAME = u'lotaku'
 
 GITHUB_URL = 'http://github.com/ametaireau/'
@@ -42,10 +41,10 @@ DEFAULT_PAGINATION = 10
 PLUGIN_PATHS = ['/Users/l/learnspace/pelican-plugins']
 PLUGINS = ['tipue_search', 'i18n_subsites']
 # THEME = '/Users/l/learnspace/pelican-themes-master/pelican-bootstrap3'
-THEME = '/Users/l/learnspace/blog/themes_self/pelican-elegant-1.3'
+THEME = '/Users/l/learnspace/lotaku.github.io/themes_self/pelican-elegant-1.3'
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
-DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search', 'tags')
+DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search', 'tags', '404')
 
 STATIC_PATHS = [
     # 'pictures',
@@ -73,3 +72,18 @@ AUTHOR_SAVE_AS = 'author/{slug}.html'
 # DAY_ARCHIVE_SAVE_AS = ''
 
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, }
+
+LANDING_PAGE_ABOUT = {
+    "title": u"Python程序员",
+    "details": u"细节 ..."
+}
+PROJECTS = [{
+    'name': 'Logpad + Duration',
+    'url': 'https://github.com/talha131/logpad-plus-duration#logpad--duration',
+    'description': 'Vim plugin to emulate Windows Notepad logging feature,'
+                   ' and log duration of each entry'},
+    {'name': 'Elegant Theme for Pelican',
+     'url': 'http://oncrashreboot.com/pelican-elegant',
+     'description': 'A clean and distraction free theme, with search and a'
+                    ' lot more unique features, using Jinja2 and Bootstrap'}
+]
